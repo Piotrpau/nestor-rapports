@@ -3,146 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rapport du 6 Mai 2026</title>
+  <title>Rapport du matin — 7 mai 2026</title>
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #1a1a2e; color: #eee; }
-    .card { background: #16213e; border-radius: 16px; padding: 24px; margin-bottom: 20px; }
-    h1 { color: #e94560; margin: 0 0 8px 0; font-size: 1.8em; }
-    h2 { color: #e94560; margin: 16px 0 8px 0; }
-    h3 { color: #0f3460; margin: 0; font-size: 1.1em; }
-    .saint { font-size: 1.3em; color: #ffd700; margin: 8px 0; }
-    .meteo { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 12px; }
-    .meteo-item { background: #0f3460; border-radius: 10px; padding: 12px; text-align: center; }
-    .meteo-item span { display: block; font-size: 1.4em; font-weight: bold; color: #e94560; }
-    .meteo-item small { color: #aaa; }
-    .event { background: #0f3460; border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; }
-    .event.full { border-left: 4px solid #e94560; }
-    .event.time { border-left: 4px solid #ffd700; }
-    .news { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #0f3460; }
-    .news:last-child { border-bottom: none; }
-    .news a { color: #e94560; text-decoration: none; }
-    .news a:hover { text-decoration: underline; }
-    .news-title { font-weight: bold; margin-bottom: 4px; }
-    .news source { color: #888; font-size: 0.85em; }
-    .thought { background: #0f3460; border-radius: 10px; padding: 16px; font-style: italic; color: #ffd700; }
-    .proverb { font-size: 1.1em; }
-    .trad { color: #aaa; font-style: normal; margin-top: 8px; }
-    .tip { background: linear-gradient(135deg, #e94560 0%, #0f3460 100%); border-radius: 10px; padding: 16px; }
-    .tip h3 { color: #fff; }
-    .sun { text-align: center; padding: 10px; background: #0f3460; border-radius: 10px; margin-bottom: 16px; }
-    .sun span { color: #ffd700; font-size: 1.2em; }
-    .es-news { background: #0f3460; border-radius: 10px; padding: 14px; margin-bottom: 12px; border-left: 4px solid #e94560; }
-    .es-news .news-title { color: #ffd700; }
-    .es-translation { color: #aaa; font-size: 0.9em; margin-top: 6px; }
-    hr { border: none; border-top: 1px solid #0f3460; margin: 16px 0; }
-    .date { color: #888; font-size: 0.9em; }
+    body { font-family: 'Segoe UI', sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+    .card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h1 { color: #e67e22; margin: 0 0 5px 0; font-size: 1.5em; }
+    .date { color: #666; font-size: 0.9em; margin-bottom: 15px; }
+    .saint { font-size: 1.1em; color: #333; margin-bottom: 20px; }
+    .meteo { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; }
+    .meteo-item { background: #f0f4ff; border-radius: 8px; padding: 10px; }
+    .meteo-item .heure { font-size: 0.8em; color: #888; }
+    .meteo-item .temp { font-size: 1.4em; font-weight: bold; color: #2c3e50; }
+    .meteo-item .emoji { font-size: 1.5em; }
+    .lever-coucher { text-align: center; margin: 15px 0; font-size: 0.95em; color: #555; }
+    .lever-coucher span { margin: 0 15px; }
+    .section-title { color: #e67e22; font-size: 1em; font-weight: bold; margin: 20px 0 10px 0; border-left: 4px solid #e67e22; padding-left: 10px; }
+    .news-item { margin-bottom: 12px; padding: 10px; background: #fafafa; border-radius: 8px; }
+    .news-item h3 { margin: 0 0 5px 0; font-size: 1em; color: #2c3e50; }
+    .news-item p { margin: 0; font-size: 0.9em; color: #555; }
+    .news-item .source { font-size: 0.8em; color: #999; margin-top: 5px; }
+    .calendrier { background: #fff3e0; }
+    .calendrier-item { padding: 8px; background: white; border-radius: 6px; margin: 5px 0; }
+    .proverbe { font-style: italic; color: #555; margin: 15px 0; }
+    .conseil { background: #e8f5e9; padding: 15px; border-radius: 8px; color: #2e7d32; }
+    .demain { background: #e3f2fd; padding: 15px; border-radius: 8px; }
+    .emoji-icon { font-size: 1.2em; }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>🌅 Bonjour Pierre !</h1>
-    <p class="date">Nous sommes mercredi 6 mai 2026.</p>
-    <p class="saint">Aujourd'hui, nous célébrons <strong>Prudence</strong> — du latin « prudentia », qui signifie sagesse, discernement et prévoyance. Sainte Prudence fait partie des premières martyres. Courageux et réfléchis aujourd'hui ! 🎯</p>
-  </div>
 
-  <div class="card">
-    <h2>🌤️ Météo du jour — Pau</h2>
-    <div class="meteo">
-      <div class="meteo-item"><small>08h</small><br><span>10°C</span><br>🌥️</div>
-      <div class="meteo-item"><small>12h</small><br><span>14°C</span><br>🌥️</div>
-      <div class="meteo-item"><small>16h</small><br><span>15°C</span><br>🌦️</div>
-      <div class="meteo-item"><small>22h</small><br><span>11°C</span><br>☁️</div>
-    </div>
-    <div class="sun">
-      🌅 <span>6h47</span> &nbsp;•&nbsp; 🌇 <span>21h08</span>
-    </div>
-    <p><strong>Demain :</strong> 8h <span style="color:#e94560">10°C</span> / Matinée ensoleillée / Après-midi soleil ☀️</p>
+<div class="card">
+  <h1>🌅 Bonjour Pierre !</h1>
+  <div class="date">Nous sommes jeudi 7 mai 2026</div>
+  <div class="saint">
+    Aujourd'hui, nous célébrons <strong>Gisèle</strong> — Prénom d'origine germanique signifiant « hostage » puis « serment ». Gisèle est fêtée en mémoire de <em>Saint Gisèle</em>, épouse de Saint Étienne de Hungary, connue pour sa piété et sa charité.
+    <br><em>Également : Sainte Aricie, Sainte Domitille, Sainte Euphrosyne, Saint Flave, Saint Léthard, Sainte Mathie, Saint Même, Saint Senery, Saint Stanislas</em>
   </div>
+</div>
 
-  <div class="card">
-    <h2>📅 Aujourd'hui</h2>
-    <div class="event full">📌 D Philippe — toute la journée</div>
-    <div class="event full">📌 Test anglais espagnol — toute la journée</div>
-    <div class="event time">🌹 ROSE 1 — 9h45 - 12h00</div>
+<div class="card">
+  <div class="meteo">
+    <div class="meteo-item">
+      <div class="heure">08h</div>
+      <div class="emoji">🌫️</div>
+      <div class="temp">5°C</div>
+    </div>
+    <div class="meteo-item">
+      <div class="heure">12h</div>
+      <div class="emoji">☁️</div>
+      <div class="temp">15°C</div>
+    </div>
+    <div class="meteo-item">
+      <div class="heure">16h</div>
+      <div class="emoji">☁️</div>
+      <div class="temp">20°C</div>
+    </div>
+    <div class="meteo-item">
+      <div class="heure">22h</div>
+      <div class="emoji">☁️</div>
+      <div class="temp">16°C</div>
+    </div>
   </div>
+  <div class="lever-coucher">
+    <span>🌅 06h46</span>
+    <span>🌇 21h09</span>
+  </div>
+</div>
 
-  <div class="card">
-    <h2>🌐 Actualité internationale</h2>
-    <div class="news">
-      <div class="news-title">Rubio Calls Hormuz Resolution Test for UN, Urges Against Vetoes</div>
-      Le secrétaire d'État américain Marco Rubio a demandé au Conseil de sécurité de l'ONU d'adopter une résolution sur le détroit d'Ormuz, qualifiant ce vote de « test » pour les Nations Unies. Les États-Unis, le Bahreïn et d'autres alliés push pour une coalition maritime face aux tensions dans la région. *[Reuters] (05/05/2026)* <a href="https://www.reuters.com/world/china/us-bahrain-push-un-backed-action-hormuz-washington-seeks-maritime-coalition-2026-05-05/">→</a>
-    </div>
-    <div class="news">
-      <div class="news-title">UN Warns of Unprecedented Crisis for Seafarers in Persian Gulf</div>
-      L'ONU met en garde contre une crise « sans précédent » pour les marins piégés en mer Rouge et dans le Golfe persique. Des centaines de marins sont bloqués à bord de navires depuis le début du conflit, certains depuis des mois, sans pouvoir être rapatriés. *[CNN] (05/05/2026)* <a href="https://www.cnn.com/2026/05/05/middleeast/seafarers-crisis-persian-gulf-intl">→</a>
-    </div>
-  </div>
+<div class="card demain">
+  <strong>🌤️ Demain :</strong> 8h <strong>9°C</strong> 🌤️ → Matinée <strong>~16°C</strong> ☁️ → Après-midi <strong>~21°C</strong> ☁️ → Soirée <strong>~20°C</strong> ☁️
+</div>
 
-  <div class="card">
-    <h2>🌍 Actualité économique</h2>
-    <div class="news">
-      <div class="news-title">Lagarde Calls for Europe to Cut Reliance on Energy Imports</div>
-      La BCE sonne l'alarme : Christine Lagarde exhorte l'Europe à réduire sa dépendance aux importations énergétiques après la flambée des prix causée par le conflit au Moyen-Orient. L'Europe doit accélérer sa transition verte et diversification. *[Bloomberg] (05/05/2026)* <a href="https://www.bloomberg.com/news/articles/2026-05-05/ecb-s-lagarde-urges-europe-to-reduce-energy-import-dependency">→</a>
-    </div>
-    <div class="news">
-      <div class="news-title">Central Banks Risk Recession from Rate Hikes on Oil Shock</div>
-      Les banques centrales mondiales sont confrontées à un choc pétrolier majeur qui menace de les pousser vers une récession si elles relèvent leurs taux. Les stratégistes préviennent que la guerre au Moyen-Orient a envoyé les prix du baril à des niveaux critiques. *[CNBC] (05/05/2026)* <a href="https://www.cnbc.com/2026/05/05/oil-price-shock-iran-interest-rates-recession-borrowing-war-central-banks-bank-england-ecb.html">→</a>
-    </div>
+<div class="card calendrier">
+  <div class="section-title">📅 Aujourd'hui</div>
+  <div class="calendrier-item">⚠️ Accès calendrier indisponible (token expiré — voir avec Nestor pour réauthentification)</div>
+  <div style="margin-top:10px;">
+    <div class="section-title">📅 Demain</div>
+    <div class="calendrier-item">⚠️ Accès calendrier indisponible</div>
   </div>
+</div>
 
-  <div class="card">
-    <h2>🇫🇷 Actualité française</h2>
-    <div class="news">
-      <div class="news-title">StudioCanal et Hachette s'associent pour adapter des œuvres littéraires au cinéma</div>
-      Les deux géants français des médias ont signé un accord pour porter davantage d'adaptations littéraires à l'écran. Un secteur en pleine expansion : ces adaptations représentent aujourd'hui près de 40% du top 100 mondial. Une bonne nouvelle pour la culture française ! *[France Info] (05/05/2026)* <a href="https://www.franceinfo.fr/culture/cinema/accord-entre-studiocanal-et-hachette-livre-pour-porter-davantage-d-adaptations-litteraires-a-l-ecran_7984778.html">→</a>
-    </div>
-    <div class="news">
-      <div class="news-title">Le Conseil d'État réautorise les sorties culturelles des détenus</div>
-      Le Conseil d'État a invalidé la suspension des programmes de sorties culturelles pour les détenus, décidée en mars dernier après une évasion depuis le RER A. Les activités culturelles restent autorisées pour les prisonniers. *[Le Figaro] (05/05/2026)* <a href="https://www.lefigaro.fr/actualite-france/le-conseil-d-etat-autorise-a-nouveau-les-sorties-culturelles-des-detenus-20260505">→</a>
-    </div>
+<div class="section-title">🌐 Actualité internationale</div>
+<div class="card">
+  <div class="news-item">
+    <h3>🇺🇸 Trump optimistic on Iran war end as talks progress</h3>
+    <p>Les États-Unis et l'Iran se rapprochent d'un accord pour mettre fin au conflit. Trump a déclaré que la guerre serait « terminée rapidement » si Téhéran accepte une proposition américaine en 14 points. Des négociations intenses sont en cours via des intermédiaires. <em>BBC News (07/05/2026)</em></p>
   </div>
+  <div class="news-item">
+    <h3>🇺🇳 UN Security Council meets on UAE attacks</h3>
+    <p>Le Conseil de sécurité de l'ONU tient des réunions à huis clos suite aux récentes attaques contre les Émirats arabes unis. La tension monte dans la région du Golfe. <em>UN News (07/05/2026)</em></p>
+  </div>
+</div>
 
-  <div class="card">
-    <h2>⚖️ Politique française</h2>
-    <div class="news">
-      <div class="news-title">Le Sénat vote une loi contre l'« entrisme » islamiste</div>
-      Le Sénat a adopté un premier texte visant à lutter contre « l'entrisme islamiste en France », malgré l'opposition du gouvernement. Le ministre Retailleau pousse ce dossier sensible, provoquant un bras de fer institutionnel. *[Le Parisien] (05/05/2026)* <a href="https://www.leparisien.fr/politique/lutte-contre-lentrisme-le-senat-franchit-un-premier-pas-dans-son-bras-de-fer-avec-le-gouvernement-05-05-2026-OE2QLDVO3RBN5JDHMHP5ZZDW7Q.php">→</a>
-    </div>
-    <div class="news">
-      <div class="news-title">Mayotte : durcissement de l'acquisition de la nationalité française</div>
-      Le gouvernement durcit les règles d'acquisition de la nationalité française pour les enfants nés à Mayotte, dans le cadre d'un ensemble de mesures sécuritaires et migratoires. Une réforme controversée qui alimente le débat public. *[RFI] (05/05/2026)* <a href="https://www.rfi.fr/france/20260505-france-durcissement-de-l-acquisition-de-la-nationalit%C3%A9-fran%C3%A7aise-pour-les-enfants-n%C3%A9s-%C3%A0-mayotte">→</a>
-    </div>
+<div class="section-title">🌍 Actualité économique</div>
+<div class="card">
+  <div class="news-item">
+    <h3>💵 Dollar drops on US-Iran deal optimism</h3>
+    <p>Le dollar recule face aux principales devises après les signes d'un accord entre Washington et Téhéran. Les marchés reagissent positivement à l'espoir d'une désescalade. La livre sterling et l'euro progressent. <em>CNBC (06/05/2026)</em></p>
   </div>
+  <div class="news-item">
+    <h3>📊 US companies add 109,000 jobs in April — below expectations</h3>
+    <p>L'économie américaine a créé 109 000 emplois en avril, un chiffre inférieur aux prévisions. Cela可能会有利于 la Réserve fédérale dans ses décisions sur les taux. <em>Bloomberg (06/05/2026)</em></p>
+  </div>
+</div>
 
-  <div class="card">
-    <h2>🇪🇸 Actualidad</h2>
-    <div class="es-news">
-      <div class="news-title">España condena los ataques "injustificados" de Irán a Emiratos Árabes y Omán</div>
-      El Gobierno español ha condenado los ataques de Irán a Emiratos Árabes y Omán, aunque estos seProdujeron en un contexto de alto el fuego. Madrid descarta "completamente" participar en cualquier operación militar en el Estrecho de Ormuz. *[Infobae] (05/05/2026)* <a href="https://www.infobae.com/espana/agencias/2026/05/05/espana-condena-los-ataques-injustificados-de-iran-a-emiratos-arabes-y-oman/">→</a>
-      <div class="es-translation">||L'Espagne condamne les attaques « injustifiées » de l'Iran contre les Émirats arabes unis et Oman. Madrid écarte « complètement » toute participation à une opération militaire dans le détroit d'Ormuz.||</div>
-    </div>
-    <div class="es-news">
-      <div class="news-title">El Gobierno apuesta por 179 medidas legislativas este año pese a la incertidumbre</div>
-      Moncloa anuncia su plan normativo anual con 179 normas previstas, aunque el año pasado solo cumplió un tercio de sus promesas. El Ejecutivo prioriza medidas económicas y sociales ante la convulsa situación internacional, con la presión fiscal de 8.500 millones prometida a la UE. *[El País / El Español] (05-06/05/2026)* <a href="https://elpais.com/espana/2026-05-05/el-gobierno-pretende-impulsar-179-medidas-legislativas-este-ano.html">→</a>
-      <div class="es-translation">||Le gouvernement mise sur 179 mesures législatives cette année malgré les incertitudes. Moncloa annonce son plan avec seulement un tiers des promesses de 2025 accomplies, et une hausse fiscale de 8,5 milliards demandée par l'UE.||</div>
-    </div>
+<div class="section-title">🇫🇷 Actualité française</div>
+<div class="card">
+  <div class="news-item">
+    <h3>🏛️ Assemblée nationale : loi sur la restitution des œuvres coloniales adoptée</h3>
+    <p>L'Assemblée nationale a approuvé un projet de loi facilitant la restitution des œuvres pillées durant la colonisation. Un texte controversé mais symbolique pour les relations avec l'Afrique. <em>Le Monde (06/05/2026)</em></p>
   </div>
+  <div class="news-item">
+    <h3>📚 Grève dans les bibliothèques de Paris</h3>
+    <p>Les bibliothécaires parisiens font grève ce jeudi pour dénoncer les sous-effectifs et la surtouristique. Des rassemblements sont prévus toute la journée. <em>Le Parisien (07/05/2026)</em></p>
+  </div>
+</div>
 
-  <div class="card">
-    <h2>💭 Pensée du jour</h2>
-    <div class="thought">
-      <p class="proverb">"The art of being wise is the art of knowing what to overlook."</p>
-      <p class="trad">||L'art d'être sage, c'est l'art de savoir ce qu'il faut ignorer.||</p>
-      <p style="color:#aaa; font-size:0.85em; margin-top:10px;">— William James</p>
-    </div>
+<div class="section-title">⚖️ Actualité politique</div>
+<div class="card">
+  <div class="news-item">
+    <h3>💰 Lecornu veut tenir l'objectif de 3% de déficit en 2029</h3>
+    <p>Le ministre des Comptes publiques appelle les équipes à « l'unité » et demande des propositions d'économies pour respecter l'engagement européen. Des tensions subsistent après le 1er-Mai. <em>Le Parisien (07/05/2026)</em></p>
   </div>
+  <div class="news-item">
+    <h3>⚔️ Le Sénat adopte le projet de loi Ripost en commission</h3>
+    <p>Les sénateurs ont adopté en commission le projet de loi Ripost du gouvernement, texte phare de la majorité pour la sécurité. Le texte doit encore passer en séance plénière. <em>France24 (06/05/2026)</em></p>
+  </div>
+</div>
 
-  <div class="card">
-    <h2>💪 Conseil du jour</h2>
-    <div class="tip">
-      <h3>🎯 Conjugaison espagnole : les pièges à éviter</h3>
-      <p>Après "pensar + infinitif" on utilise l'<strong>indicatif</strong> (pensé que...), pas le subjonctif. Exemple : <em>"Pienso que vas a llegar tarde"</em> — et non "piennes que". Un piège classique à éviter pour ta semaine de test anglais-espagnol ! 💪</p>
-    </div>
+<div class="section-title">🇪🇸 Actualidad</div>
+<div class="card">
+  <div class="news-item">
+    <h3>🚢 España: decomisan 30 toneladas de cocaína — el alijo más grande de la historia</h3>
+    <p>El mercante 'Arconian' transportaba 30 toneladas de cocaína con destino a España. La Operación ha sido liderada por la Policía Nacional y Vigilancia Aduanera. Es el mayor alijo jamás interceptado en el mundo. <em>El País (07/05/2026)</em></p>
+    <p><em>Traduction : </em>Un cargo transportait 30 tonnes de cocaïne à destination de l'Espagne — la plus grande saisie jamais réalisée au monde. L'opération a été menée par la Police nationale et les douanes. <em>El País (07/05/2026)</em></p>
   </div>
+  <div class="news-item">
+    <h3>📉 La actividad del sector privado español cae por primera vez en dos años</h3>
+    <p>El índice PMI de España bajó de 50 puntos por primera vez desde 2024, señalando una contracción de la economía. Los economistas warn de un posible enfriamiento de la actividad. <em>Infobae (06/05/2026)</em></p>
+    <p><em>Traduction : </em>L'activité du secteur privé espagnol chute pour la première fois en deux ans, selon l'indice PMI qui passe sous le seuil des 50 points. Les économistes alertent sur un possible ralentissement. <em>Infobae (06/05/2026)</em></p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="section-title">💭 Pensée du jour</div>
+  <p class="proverbe">« No hay mal que por bien no venga. »</p>
+  <p class="proverbe" style="font-size:0.85em;">||« Il n'est point de mal dont quelque bien ne naisse. » — Proverbe espagnol||</p>
+</div>
+
+<div class="card conseil">
+  <div class="section-title">💪 Conseil du jour</div>
+  <p>On dit que Gisèle symbolise la loyauté et le lien. Profite de cette journée pour renforcer un lien important — avec Élisa, Théodore ou Cassandre. Cinq minutes de présence attentive valent mieux qu'une heure de distraction. 🌿</p>
+</div>
+
 </body>
 </html>
