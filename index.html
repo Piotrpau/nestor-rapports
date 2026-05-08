@@ -3,160 +3,204 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rapport du matin — 7 mai 2026</title>
+  <title>Rapport Nestor — Vendredi 8 mai 2026</title>
   <style>
-    body { font-family: 'Segoe UI', sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
-    .card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    h1 { color: #e67e22; margin: 0 0 5px 0; font-size: 1.5em; }
-    .date { color: #666; font-size: 0.9em; margin-bottom: 15px; }
-    .saint { font-size: 1.1em; color: #333; margin-bottom: 20px; }
-    .meteo { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; }
-    .meteo-item { background: #f0f4ff; border-radius: 8px; padding: 10px; }
-    .meteo-item .heure { font-size: 0.8em; color: #888; }
-    .meteo-item .temp { font-size: 1.4em; font-weight: bold; color: #2c3e50; }
-    .meteo-item .emoji { font-size: 1.5em; }
-    .lever-coucher { text-align: center; margin: 15px 0; font-size: 0.95em; color: #555; }
-    .lever-coucher span { margin: 0 15px; }
-    .section-title { color: #e67e22; font-size: 1em; font-weight: bold; margin: 20px 0 10px 0; border-left: 4px solid #e67e22; padding-left: 10px; }
-    .news-item { margin-bottom: 12px; padding: 10px; background: #fafafa; border-radius: 8px; }
-    .news-item h3 { margin: 0 0 5px 0; font-size: 1em; color: #2c3e50; }
-    .news-item p { margin: 0; font-size: 0.9em; color: #555; }
-    .news-item .source { font-size: 0.8em; color: #999; margin-top: 5px; }
-    .calendrier { background: #fff3e0; }
-    .calendrier-item { padding: 8px; background: white; border-radius: 6px; margin: 5px 0; }
-    .calendrier-item.allevent { background: #fff8e1; }
-    .proverbe { font-style: italic; color: #555; margin: 15px 0; }
-    .conseil { background: #e8f5e9; padding: 15px; border-radius: 8px; color: #2e7d32; }
-    .demain { background: #e3f2fd; padding: 15px; border-radius: 8px; }
-    .emoji-icon { font-size: 1.2em; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f1117; color: #e0e0e0; line-height: 1.6; padding: 20px; }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1 { color: #f0a500; font-size: 1.8em; margin-bottom: 5px; }
+    h2 { color: #f0a500; font-size: 1.3em; margin: 25px 0 10px; padding-bottom: 5px; border-bottom: 1px solid #333; }
+    h3 { color: #8ab4f8; font-size: 1.1em; margin: 15px 0 8px; }
+    .header { margin-bottom: 20px; }
+    .date { color: #888; font-size: 0.95em; }
+    .saint { background: #1a1d26; padding: 12px 16px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #f0a500; }
+    .meteo { background: #1a1d26; padding: 15px 16px; border-radius: 8px; margin: 15px 0; }
+    .meteo-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 5px; margin: 5px 0; }
+    .meteo-item { font-size: 0.9em; }
+    .soleil { color: #ffd700; }
+    .nuage { color: #aaa; }
+    .lever-coucher { display: flex; justify-content: space-between; margin-top: 10px; color: #888; font-size: 0.9em; }
+    .events { background: #1a1d26; padding: 12px 16px; border-radius: 8px; margin: 15px 0; }
+    .event-item { padding: 5px 0; }
+    .event-allday { color: #4ade80; }
+    .event-time { color: #f0a500; }
+    .news { background: #1a1d26; padding: 12px 16px; border-radius: 8px; margin: 10px 0; }
+    .news-title { color: #fff; font-weight: 600; margin-bottom: 5px; }
+    .news-meta { font-size: 0.8em; color: #888; margin-bottom: 5px; }
+    .news-source { color: #f0a500; }
+    .news a { color: #8ab4f8; text-decoration: none; }
+    .news a:hover { text-decoration: underline; }
+    .thought { background: linear-gradient(135deg, #1a1d26, #252836); padding: 15px 16px; border-radius: 8px; margin: 15px 0; font-style: italic; }
+    .thought-en { color: #e0e0e0; font-size: 1.05em; }
+    .thought-fr { color: #888; margin-top: 8px; font-size: 0.9em; }
+    .conseil { background: #1a3a1a; padding: 12px 16px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #4ade80; }
+    .footer { text-align: center; color: #555; font-size: 0.8em; margin-top: 30px; padding-top: 15px; border-top: 1px solid #222; }
+    .emoji { font-size: 1.1em; }
+    .hidden { color: #555; font-size: 0.85em; }
+    .french-news { color: #e0e0e0; }
+    .french-news .hidden { display: none; }
+    hr { border: none; border-top: 1px solid #333; margin: 20px 0; }
   </style>
 </head>
 <body>
-
-<div class="card">
-  <h1>🌅 Bonjour Pierre !</h1>
-  <div class="date">Nous sommes jeudi 7 mai 2026</div>
-  <div class="saint">
-    Aujourd'hui, nous célébrons <strong>Gisèle</strong> — Prénom d'origine germanique signifiant « serment ». Gisèle est fêtée en mémoire de <em>Saint Gisèle</em>, épouse de Saint Étienne de Hungary, connue pour sa piété et sa charité.
-    <br><em>Également : Sainte Aricie, Sainte Domitille, Sainte Euphrosyne, Saint Flave, Saint Léthard, Sainte Mathie, Saint Même, Saint Senery, Saint Stanislas</em>
-  </div>
-</div>
-
-<div class="card">
-  <div class="meteo">
-    <div class="meteo-item">
-      <div class="heure">08h</div>
-      <div class="emoji">🌫️</div>
-      <div class="temp">5°C</div>
+  <div class="container">
+    <div class="header">
+      <h1>🥸 Rapport Nestor</h1>
+      <div class="date">Vendredi 8 mai 2026 — Pau, Pyrénées-Atlantiques</div>
     </div>
-    <div class="meteo-item">
-      <div class="heure">12h</div>
-      <div class="emoji">☁️</div>
-      <div class="temp">15°C</div>
+
+    <div class="saint">
+      🎂 Aujourd'hui, nous célébrons <strong>Saint Désiré</strong> — du latin <em>desiderium</em> (désir, souhait), rappelant que chaque désir refusé par le monde a trouvé sa finalité en Dieu.<br>
+      Également fêtés : Saint Acathe, Sainte Aglaé, Sainte Désirée, Saint Gibrien, Saint Hellade, Saint Métron, Saint Pierre de Tarentaise, Saint Tertule.
     </div>
-    <div class="meteo-item">
-      <div class="heure">16h</div>
-      <div class="emoji">☁️</div>
-      <div class="temp">20°C</div>
+
+    <div class="meteo">
+      <h2>🌤️ Météo du jour — Pau</h2>
+      <div class="meteo-row">
+        <span>☀️ <strong>8h</strong> : 9°C</span>
+        <span>☀️ <strong>10h</strong> : 13°C</span>
+        <span>🌤️ <strong>12h</strong> : 19°C</span>
+        <span>☁️ <strong>14h</strong> : 22°C</span>
+      </div>
+      <div class="meteo-row">
+        <span>☁️ <strong>16h</strong> : 21°C</span>
+        <span>☁️ <strong>18h</strong> : 21°C</span>
+        <span>☀️ <strong>20h</strong> : 16°C</span>
+        <span>🌤️ <strong>22h</strong> : 15°C</span>
+      </div>
+      <div class="lever-coucher">
+        <span>🌅 Lever : <strong>6h44</strong></span>
+        <span>🌇 Coucher : <strong>21h12</strong></span>
+      </div>
+      <hr>
+      <div class="meteo-row">
+        <span><strong>Demain (samedi 9 mai)</strong> :</span>
+        <span>☁️ 8h : 10°C</span>
+        <span>☁️ Matinée</span>
+        <span>☁️ Après-midi · jusqu'à 23°C</span>
+      </div>
     </div>
-    <div class="meteo-item">
-      <div class="heure">22h</div>
-      <div class="emoji">☁️</div>
-      <div class="temp">16°C</div>
+
+    <div class="events">
+      <h2>📅 Événements du jour</h2>
+      <div class="event-item">
+        <span class="event-allday">📌 A6 Evelyne</span> <span class="event-time">(toute la journée)</span>
+      </div>
+      <div class="event-item">
+        <span class="event-time">⏰ Max dépôt candidature</span> <span class="event-time">09h30</span>
+      </div>
+      <hr>
+      <h3>📅 Demain (samedi 9 mai)</h3>
+      <div class="event-item">
+        <span class="event-allday">📌 A6 Evelyne</span> <span class="event-time">(toute la journée)</span>
+      </div>
+    </div>
+
+    <h2>🌐 Actualité internationale</h2>
+
+    <div class="news">
+      <div class="news-title">« Ce pays est dirigé par des fous » : cessez-le-feu en sursis après des frappes mutuelles entre Iran et États-Unis</div>
+      <div class="news-meta">
+        <span class="news-source">Le Parisien</span> · 08/05/2026
+      </div>
+      <p class="french-news">Les États-Unis ont mené des frappes contre des installations iraniennes, quelques jours après une attaque iranienne ayant tué des soldats américains. Téhéran accuse Washington de folie, tandis qu'un cessez-le-feu précaire a été proclamé mais reste fragile. <a href="https://www.leparisien.fr/international/etats-unis/ce-pays-est-dirige-par-des-fous-un-cessez-le-feu-en-sursis-apres-des-frappes-mutuelles-entre-iran-et-etats-unis-08-05-2026-ZBCUHBVGJJFGDB6ECY6VHA22EU.php" target="_blank">🔗 Lire la suite</a></p>
+    </div>
+
+    <div class="news">
+      <div class="news-title">La Russie annonce un cessez-le-feu avec l'Ukraine les 8 et 9 mai</div>
+      <div class="news-meta">
+        <span class="news-source">France Info</span> · 08/05/2026
+      </div>
+      <p class="french-news">Moscou a proclamé une trêve unilatérale du 8 au 10 mai, à l'occasion des commemorations de la Victoire sur l'Allemagne nazie. Kiev a annoncé une mesure similaire pour les 8-9 mai, mais les deux parties ne sont pas d'accord sur les modalités ni sur la durée. <a href="https://www.franceinfo.fr/monde/europe/manifestations-en-ukraine/la-russie-annonce-un-cessez-le-feu-unilateral-avec-l-ukraine-les-8-et-9-mai-a-l-occasion-des-commemorations-de-la-victoire-sur-l-allemagne-nazie_7982972.html" target="_blank">🔗 Lire la suite</a></p>
+    </div>
+
+    <h2>💶 Actualité économique</h2>
+
+    <div class="news">
+      <div class="news-title">La BCE maintient ses taux mais met en garde contre l'inflation et le ralentissement</div>
+      <div class="news-meta">
+        <span class="news-source">Yahoo Finance</span> · Mai 2026
+      </div>
+      <p class="french-news">La Banque centrale européenne a laissé ses taux inchangés comme prévu, tout en avertissant que les pressions inflationnistes restent vives dans certains secteurs et que la croissance économique faiblit dans la zone euro. <a href="https://fr.finance.yahoo.com/actualites/bce-maintient-taux-met-garde-125257900.html" target="_blank">🔗 Lire la suite</a></p>
+    </div>
+
+    <div class="news">
+      <div class="news-title">Des responsables de la BCE envisagent une hausse des taux face au risque d'inflation persistante</div>
+      <div class="news-meta">
+        <span class="news-source">Investir / Les Échos</span> · 01/05/2026
+      </div>
+      <p class="french-news">Selon des sources proches de l'institution, plusieurs responsables de la BCE envisagent une remontée des taux si l'inflation ne reflue pas comme prévu dans les prochains mois. La question divise le conseil des gouverneurs. <a href="https://investir.lesechos.fr/marches-indices/devises-taux/bce-des-responsables-envisagent-une-hausse-des-taux-face-au-risque-dune-inflation-persistante-2229741" target="_blank">🔗 Lire la suite</a></p>
+    </div>
+
+    <h2>🇫🇷 Actualité française (Société / Culture)</h2>
+
+    <div class="news">
+      <div class="news-title">Le Louvre entre dans une « Nouvelle Renaissance » : le nouveau président confirme les grands travaux</div>
+      <div class="news-meta">
+        <span class="news-source">France Info</span> · 07/05/2026
+      </div>
+      <p class="french-news">Christophe Leribault, nouveau président du musée, a confirmé le план de rénovation ambitieux surnommé « Louvre Nouvelle Renaissance », initialement annoncé par Emmanuel Macron. Les travaux, chiffrés à plusieurs centaines de millions d'euros, s'étaleront sur une décennie. <a href="https://www.franceinfo.fr/culture/arts-expos/louvre/le-nouveau-president-du-louvre-christophe-leribault-confirme-le-projet-de-grands-travaux-du-musee_7986854.html" target="_blank">🔗 Lire la suite</a></p>
+    </div>
+
+    <div class="news">
+      <div class="news-title">Prime Video double sa contribution à la création française</div>
+      <div class="news-meta">
+        <span class="news-source">France 24</span> · 07/05/2026
+      </div>
+      <p class="french-news">La plateforme de streaming d'Amazon va investir massivement dans la production audiovisuelle française en 2026, doublant sa participation financière. Une victoire pour les producteurs et diffuseurs français qui réclamaient une contribution accrue des plateformes étrangères. <a href="https://www.france24.com/fr/info-en-continu/20260507-prime-video-pr%C3%A9voit-de-doubler-son-versement-pour-la-cr%C3%A9ation-fran%C3%A7aise" target="_blank">🔗 Lire la suite</a></p>
+    </div>
+
+    <h2>🏛️ Actualité politique</h2>
+
+    <div class="news">
+      <div class="news-title">Le Sénat adopte en commission le projet de loi Ripost</div>
+      <div class="news-meta">
+        <span class="news-source">France 24</span> · 06/05/2026
+      </div>
+      <p class="french-news">Les sénateurs ont adopté le texte controversé du gouvernement visant à durcir les procédures judiciaires et administratives. Ce projet, porté par le ministère de la Justice, vise à accélérer les procès et renforcer l'efficacité de la justice. <a href="https://www.france24.com/fr/info-en-continu/20260506-le-s%C3%A9nat-adopte-en-commission-le-projet-de-loi-ripost-du-gouvernement" target="_blank">🔗 Lire la suite</a></p>
+    </div>
+
+    <div class="news">
+      <div class="news-title">Lutte contre l'« entrisme » : Retailleau défend son projet au Sénat, en concurrence avec Nuñez</div>
+      <div class="news-meta">
+        <span class="news-source">France 24</span> · 05/05/2026
+      </div>
+      <p class="french-news">Le ministre de l'Intérieur défend au Sénat sa proposition de loi visant à endiguer l'influence des mouvements islamistes dans les structures publiques, en concurrence avec une proposition similaire du député Nuñez. Deux textes, deux approches, pour le même objectif. <a href="https://www.france24.com/fr/info-en-continu/20260505-lutte-contre-l-entrisme-retailleau-d%C3%A9fend-son-projet-au-s%C3%A9nat-en-concurrence-avec-nu%C3%B1ez" target="_blank">🔗 Lire la suite</a></p>
+    </div>
+
+    <h2>🇪🇸 Actualidad (España)</h2>
+
+    <div class="news">
+      <div class="news-title">Rusia extiende su propuesta de tregua del 8 al 10 de mayo; la UE se prepara para posibles diálogos con Putin</div>
+      <div class="news-meta">
+        <span class="news-source">France 24</span> · 07/05/2026
+      </div>
+      <p class="french-news">Rusia ha prolongado su alto el fuego unilateral hasta el 10 de mayo, y la Unión Europea ha comenzado a prepararse para posibles conversaciones con Putin si la tregua se mantiene. El Kremlin busca proyecta imagen de moderación mientras intensifica su retórica sobre las condiciones para un acuerdo de paz. <a href="https://www.france24.com/es/europa/20260507-rusia-extiende-su-propuesta-de-tregua-del-8-al-10-de-mayo-la-ue-se-prepara-para-posibles-di%C3%A1logos-con-putin" target="_blank">🔗 Lire la suite</a></p>
+      <p class="hidden">||Traduction : La Russie étend sa proposition de trêve du 8 au 10 mai ; l'UE se prépare à d'éventuels dialogues avec Poutine. La Russie a prolongé son cessez-le-feu unilatéral jusqu'au 10 mai, et l'Union européenne a commencé à se préparer à d'éventuelles négociations avec Poutine si la trêve se maintient. Le Kremlin cherche à projeter une image de modération tout en intensifiant sa rhétorique sur les conditions d'un accord de paix.||</p>
+    </div>
+
+    <div class="news">
+      <div class="news-title">Moreno se apunta al « yo o el caos » en las elecciones andaluzas</div>
+      <div class="news-meta">
+        <span class="news-source">El País</span> · 08/05/2026
+      </div>
+      <p class="french-news">El líder del PP andaluz advierte que sin su victoria se paralizarían las oposiciones y las ayudas económicas. Los partidos de izquierda buscan formar alianzas para impedir su investidura, mientras Moreno consolida su posición como favorito. <a href="https://elpais.com/espana/elecciones-andalucia/2026-05-08/moreno-se-apunta-al-yo-o-el-caos.html" target="_blank">🔗 Lire la suite</a></p>
+      <p class="hidden">||Traduction : Moreno opte pour le « moi ou le chaos » dans les élections andalouses. Le líder du PP andalou prévient que sans sa victoire, les concours et les aides économiques seraient paralisés. Les partis de gauche cherchent à former des alliances pour empêcher son investiture, tandis que Moreno consolide sa position de favori.||</p>
+    </div>
+
+    <div class="thought">
+      <div class="thought-en">💭 <em>"A man is not finished when he is defeated. He is finished when he quits."</em></div>
+      <div class="thought-fr">||Un homme n'est pas fini quand il est vaincu. Il est fini quand il abandonne.|| — Richard Nixon</div>
+    </div>
+
+    <div class="conseil">
+      <strong>💪 Conseil :</strong> Aujourd'hui c'est le 8 mai — jour férié et anniversaire de la Victoire 1945. Si tu as du temps libre, pourquoi ne pas en profiter pour une session d'espagnol ou avancer sur ton JDR ? Un jour de travail en moins, c'est parfait pour progresser sur tes projets perso.
+    </div>
+
+    <div class="footer">
+      Rapport généré par Nestor 🥸 · 8 mai 2026 à 7h17<br>
+      Source météo : Open-Meteo · Source calendrier : Google Calendar
     </div>
   </div>
-  <div class="lever-coucher">
-    <span>🌅 06h46</span>
-    <span>🌇 21h09</span>
-  </div>
-</div>
-
-<div class="card demain">
-  <strong>🌤️ Demain :</strong> 8h <strong>9°C</strong> 🌤️ → Matinée <strong>~16°C</strong> ☁️ → Après-midi <strong>~21°C</strong> ☁️ → Soirée <strong>~20°C</strong> ☁️
-</div>
-
-<div class="card calendrier">
-  <div class="section-title">📅 Aujourd'hui (7 mai)</div>
-  <div class="calendrier-item">Aucun événement prévu</div>
-  <div style="margin-top:10px;">
-    <div class="section-title">📅 Demain (8 mai)</div>
-    <div class="calendrier-item">00h00 - 00h30 — <strong>Max dépôt candidature</strong></div>
-    <div class="calendrier-item allevent">Journée — <strong>A6 Evelyne</strong></div>
-  </div>
-</div>
-
-<div class="section-title">🌐 Actualité internationale</div>
-<div class="card">
-  <div class="news-item">
-    <h3>🇺🇸 Trump optimistic on Iran war end as talks progress</h3>
-    <p>Les États-Unis et l'Iran se rapprochent d'un accord pour mettre fin au conflit. Trump a déclaré que la guerre serait « terminée rapidement » si Téhéran accepte une proposition américaine en 14 points. Des négociations intenses sont en cours via des intermédiaires. <em>BBC News (07/05/2026)</em></p>
-  </div>
-  <div class="news-item">
-    <h3>🇺🇳 UN Security Council meets on UAE attacks</h3>
-    <p>Le Conseil de sécurité de l'ONU tient des réunions à huis clos suite aux récentes attaques contre les Émirats arabes unis. La tension monte dans la région du Golfe. <em>UN News (07/05/2026)</em></p>
-  </div>
-</div>
-
-<div class="section-title">🌍 Actualité économique</div>
-<div class="card">
-  <div class="news-item">
-    <h3>💵 Dollar drops on US-Iran deal optimism</h3>
-    <p>Le dollar recule face aux principales devises après les signes d'un accord entre Washington et Téhéran. Les marchés reagissent positivement à l'espoir d'une désescalade. La livre sterling et l'euro progressent. <em>CNBC (06/05/2026)</em></p>
-  </div>
-  <div class="news-item">
-    <h3>📊 US companies add 109,000 jobs in April — below expectations</h3>
-    <p>L'économie américaine a créé 109 000 emplois en avril, un chiffre inférieur aux prévisions. Cela可能会有利于 la Réserve fédérale dans ses décisions sur les taux. <em>Bloomberg (06/05/2026)</em></p>
-  </div>
-</div>
-
-<div class="section-title">🇫🇷 Actualité française</div>
-<div class="card">
-  <div class="news-item">
-    <h3>🏛️ Assemblée nationale : loi sur la restitution des œuvres coloniales adoptée</h3>
-    <p>L'Assemblée nationale a approuvé un projet de loi facilitant la restitution des œuvres pillées durant la colonisation. Un texte controversé mais symbolique pour les relations avec l'Afrique. <em>Le Monde (06/05/2026)</em></p>
-  </div>
-  <div class="news-item">
-    <h3>📚 Grève dans les bibliothèques de Paris</h3>
-    <p>Les bibliothécaires parisiens font grève ce jeudi pour dénoncer les sous-effectifs et la surtouristique. Des rassemblements sont prévus toute la journée. <em>Le Parisien (07/05/2026)</em></p>
-  </div>
-</div>
-
-<div class="section-title">⚖️ Actualité politique</div>
-<div class="card">
-  <div class="news-item">
-    <h3>💰 Lecornu veut tenir l'objectif de 3% de déficit en 2029</h3>
-    <p>Le ministre des Comptes publiques appelle les équipes à « l'unité » et demande des propositions d'économies pour respecter l'engagement européen. Des tensions subsistent après le 1er-Mai. <em>Le Parisien (07/05/2026)</em></p>
-  </div>
-  <div class="news-item">
-    <h3>⚔️ Le Sénat adopte le projet de loi Ripost en commission</h3>
-    <p>Les sénateurs ont adopté en commission le projet de loi Ripost du gouvernement, texte phare de la majorité pour la sécurité. Le texte doit encore passer en séance plénière. <em>France24 (06/05/2026)</em></p>
-  </div>
-</div>
-
-<div class="section-title">🇪🇸 Actualidad</div>
-<div class="card">
-  <div class="news-item">
-    <h3>🚢 España: decomisan 30 toneladas de cocaína — el alijo más grande de la historia</h3>
-    <p>El mercante 'Arconian' transportaba 30 toneladas de cocaína con destino a España. La Operación ha sido liderada por la Policía Nacional y Vigilancia Aduanera. Es el mayor alijo jamás interceptado en el mundo. <em>El País (07/05/2026)</em></p>
-    <p><em>Traduction : </em>Un cargo transportait 30 tonnes de cocaïne à destination de l'Espagne — la plus grande saisie jamais réalisée au monde. L'opération a été menée par la Police nationale et les douanes. <em>El País (07/05/2026)</em></p>
-  </div>
-  <div class="news-item">
-    <h3>📉 La actividad del sector privado español cae por primera vez en dos años</h3>
-    <p>El índice PMI de España bajó de 50 puntos por primera vez desde 2024, señalando una contracción de la economía. Los economistas warn de un posible enfriamiento de la actividad. <em>Infobae (06/05/2026)</em></p>
-    <p><em>Traduction : </em>L'activité du secteur privé espagnol chute pour la première fois en deux ans, selon l'indice PMI qui passe sous le seuil des 50 points. Les économistes alertent sur un possible ralentissement. <em>Infobae (06/05/2026)</em></p>
-  </div>
-</div>
-
-<div class="card">
-  <div class="section-title">💭 Pensée du jour</div>
-  <p class="proverbe">« No hay mal que por bien no venga. »</p>
-  <p class="proverbe" style="font-size:0.85em;">||« Il n'est point de mal dont quelque bien ne naisse. » — Proverbe espagnol||</p>
-</div>
-
-<div class="card conseil">
-  <div class="section-title">💪 Conseil du jour</div>
-  <p>Gisèle symbolise le lien et la loyauté. Une journée calme avec peu d'événements — c'est une opportunité pour avancer sur un projet sans pression. Perfect pour réviser ton espagnol ou avancer sur ton JDR. 🎲</p>
-</div>
-
 </body>
 </html>
