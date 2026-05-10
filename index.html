@@ -3,157 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rapport du matin — 9 mai 2026</title>
+    <title>Rapport du Matin - 10 Mai 2026</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #1a1a2e; color: #eee; line-height: 1.6; }
-        h1 { color: #e94560; border-bottom: 2px solid #e94560; padding-bottom: 10px; }
-        h2 { color: #0f3460; background: #e94560; padding: 8px 12px; border-radius: 4px; margin-top: 25px; }
-        .header { background: linear-gradient(135deg, #0f3460, #16213e); padding: 20px; border-radius: 10px; margin-bottom: 20px; }
-        .header h1 { color: #fff; border: none; margin: 0; }
-        .date { color: #e94560; font-size: 1.2em; margin-top: 5px; }
-        .saint { background: #16213e; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #e94560; }
-        .meteo { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; }
-        .meteo-box { background: #16213e; padding: 15px; border-radius: 8px; }
-        .meteo-box span { display: block; font-size: 1.5em; }
-        .emoji { font-size: 1.5em; }
-        .sun { display: flex; justify-content: space-around; margin: 15px 0; padding: 15px; background: #16213e; border-radius: 8px; }
-        .event { background: #16213e; padding: 10px 15px; border-radius: 6px; margin: 8px 0; border-left: 3px solid #e94560; }
-        .event-full { border-left-color: #f39c12; }
-        .news { background: #16213e; padding: 15px; border-radius: 8px; margin: 10px 0; }
-        .news h3 { color: #e94560; margin-top: 0; }
-        .news .source { color: #888; font-size: 0.85em; }
-        .news .url { color: #4fc3f7; font-size: 0.8em; }
-        .proverb { background: linear-gradient(135deg, #0f3460, #16213e); padding: 20px; border-radius: 10px; text-align: center; font-style: italic; margin: 20px 0; }
-        .proverb span { display: block; margin-top: 10px; color: #e94560; font-style: normal; }
-        .conseil { background: #16213e; padding: 15px; border-radius: 8px; border-left: 4px solid #4fc3f7; margin: 15px 0; }
-        .actualidad { background: #0f3460; padding: 15px; border-radius: 8px; margin: 10px 0; }
-        .actualidad h3 { color: #4fc3f7; margin-top: 0; }
-        .traduction { background: #1a1a2e; color: #aaa; font-style: italic; padding: 10px 15px; border-radius: 6px; margin-top: 10px; border-left: 3px solid #666; }
-        .footer { text-align: center; margin-top: 30px; padding: 20px; color: #666; font-size: 0.9em; }
-        .emoji-legend { text-align: center; margin: 10px 0; color: #888; }
-        .traduction-label { color: #888; font-size: 0.8em; font-style: normal; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; color: #eee; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        h1 { text-align: center; color: #e94560; margin-bottom: 5px; font-size: 2em; }
+        .subtitle { text-align: center; color: #888; margin-bottom: 30px; font-size: 1.1em; }
+        .section { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 25px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .section h2 { color: #e94560; margin-bottom: 15px; font-size: 1.3em; border-bottom: 2px solid #e94560; padding-bottom: 8px; }
+        .meteo { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; text-align: center; }
+        .meteo-item { background: rgba(233,69,96,0.2); padding: 15px; border-radius: 10px; }
+        .meteo-item .time { font-size: 0.9em; color: #888; }
+        .meteo-item .temp { font-size: 1.8em; font-weight: bold; }
+        .event { background: rgba(46,213,115,0.1); padding: 12px 15px; border-radius: 8px; margin-bottom: 8px; border-left: 3px solid #2ed573; }
+        .event-allday { background: rgba(255,215,0,0.1); border-left-color: #ffd700; }
+        .news { margin-bottom: 15px; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 10px; }
+        .news h3 { color: #4ecdc4; margin-bottom: 8px; font-size: 1.1em; }
+        .news p { color: #ccc; line-height: 1.6; }
+        .news .source { color: #666; font-size: 0.85em; margin-top: 8px; }
+        .saint { text-align: center; font-size: 1.2em; color: #ffd700; margin-bottom: 20px; }
+        .lever-coucher { text-align: center; color: #888; margin: 15px 0; font-size: 1.1em; }
+        .proverb { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px; text-align: center; margin: 20px 0; }
+        .proverb .original { font-size: 1.3em; color: #fff; margin-bottom: 10px; }
+        .proverb .translation { color: #ddd; font-style: italic; }
+        .conseil { background: rgba(255,159,67,0.1); padding: 15px; border-radius: 10px; border-left: 3px solid #ff9f43; }
+        .badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 0.75em; background: #e94560; color: #fff; margin-right: 8px; }
+        .footer { text-align: center; color: #666; margin-top: 30px; font-size: 0.9em; }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🌅 Bonjour Pierre !</h1>
-        <div class="date">Nous sommes samedi 9 mai 2026</div>
-    </div>
+    <div class="container">
+        <h1>🌅 Rapport du Matin</h1>
+        <p class="subtitle">Dimanche 10 Mai 2026 — Pau, France</p>
 
-    <div class="saint">
-        <strong>🎉 Aujourd'hui, nous célébrons Pacôme</strong><br>
-        Pacôme (du grec <em>pakhos</em> = robuste) est un saint du IVe siècle, père du monachisme cénobitique. Il fonda les premiers monastères organisés en Haute-Égypte.
-    </div>
-
-    <h2>🌤️ Météo du jour — Pau</h2>
-    <div class="emoji-legend">☁️ Couvert • 🌤️ Partiellement nuageux • ☀️ Dégagé</div>
-    <div class="meteo">
-        <div class="meteo-box"><strong>08h</strong><br><span>10°C</span>☁️</div>
-        <div class="meteo-box"><strong>12h</strong><br><span>18°C</span>🌤️</div>
-        <div class="meteo-box"><strong>16h</strong><br><span>22°C</span>☁️</div>
-        <div class="meteo-box"><strong>22h</strong><br><span>17°C</span>☁️</div>
-    </div>
-    <div class="sun">
-        <div>🌅 Lever : <strong>06h45</strong></div>
-        <div>🌇 Coucher : <strong>21h20</strong></div>
-    </div>
-
-    <h2>📅 Demain</h2>
-    <p>🌤️ 08h / Dégagé en matinée / Nuageux l'après-midi — 11°C → 19°C</p>
-
-    <h2>📅 Aujourd'hui</h2>
-    <p><em>Aucun événement prévu aujourd'hui.</em></p>
-
-    <h2>🌐 Actualité internationale</h2>
-    <div class="news">
-        <h3>Ukraine : la trêve du 9-Mai reste un leurre sur le front</h3>
-        <p>Malgré l'annonce de cessez-le-feu unilatéraux par la Russie et l'Ukraine à l'occasion de la victoire alliée, les combats n'ont pas cessé. Kiev accuse Moscou d'avoir lancé des attaques de drones et de missiles dans la nuit, tandis que la Russie dément toute violation. Les deux parties se rejettent la responsabilité de l'absence de toute tentative réelle de cessez-le-feu. Cette situation survient au moment où certains médiateurs internationaux espèrent encore une désescalade.</p>
-        <div class="source">Source : Le Figaro (09/05/2026)</div>
-        <div class="url"><a href="https://www.lefigaro.fr/international/malgre-le-cessez-le-feu-annonce-l-ennemi-n-a-pas-reduit-l-intensite-de-ses-attaques-sur-le-front-ukrainien-les-treves-sont-sans-effet-20260509">Le Figaro — Ukraine</a></div>
-    </div>
-    <div class="news">
-        <h3>Russie-UE : retour discret des négociations</h3>
-        <p>Selon des sources diplomatiques relayées par El País, les administrations russe et européenne discutent ouvertement d'une reprise des négociations, potentiellement dans le cadre d'un accord de paix plus large. Une fuite suggère que le plan propagandistique russe serait conçu pour célébrer une « paix victorieuse » sans concessions territoriales majeures. Cette reprise des contacts reste toutefois très sensible politiquement pour plusieurs capitales européennes.</p>
-        <div class="source">Source : El País (08/05/2026)</div>
-        <div class="url"><a href="https://elpais.com/internacional/2026-05-08/rusia-y-la-union-europea-hablan-abiertamente-de-retomar-sus-negociaciones.html">El País — Russie-UE</a></div>
-    </div>
-
-    <h2>🌍 Actualité économique</h2>
-    <div class="news">
-        <h3>Marchés mitigés : le dollar reflue, les semi-conducteurs rebondissent</h3>
-        <p>Les places boursières mondiales ont affiché des performances contrastées vendredi, entre un reflux du dollar face à la résilience de l'emploi américain et un rebond notable du secteur des semi-conducteurs. Les investisseurs restent focalisés sur les négociations entre les États-Unis et l'Iran, espérant un accord de paix qui pourrait désescalader les tensions au Moyen-Orient et favoriser les échanges commerciaux régionaux.</p>
-        <div class="source">Source : Zonebourse / Reuters (08/05/2026)</div>
-        <div class="url"><a href="https://www.zonebourse.com/actualite-bourse/seance-mitigee-sur-les-marches-le-dollar-reflue-face-a-la-resilience-de-l-emploi-us-et-au-rebond-de-ce7f5bdbde8af020">Zonebourse — Marchés</a></div>
-    </div>
-    <div class="news">
-        <h3>Or et pétroles en hausse, le Brent à 108$</h3>
-        <p>Le cours de l'or a bondi de 2% dans un contexte d'incertitude géopolitique, tandis que le baril de Brent dépasse les 108$ et le WTI s'approche des 101$. Cette flambée des matières premières reflète les inquiétudes des investisseurs quant à la stabilité des approvisionnements énergétiques mondiaux.</p>
-        <div class="source">Source : Negocios.com (06/05/2026)</div>
-        <div class="url"><a href="https://www.negocios.com/articulo/geopolitica/alerta-maxima-kiev-rusia-ordena-evacuacion-antes-9-mayo/20260506231327485594.html">Negocios — Matières premières</a></div>
-    </div>
-
-    <h2>📰 Actualité française</h2>
-    <div class="news">
-        <h3>Tous à l'Opéra : portes ouvertes gratuites ce 9 mai</h3>
-        <p>L'opération « Tous à l'Opéra » revient pour sa 15e édition ce samedi 9 mai, avec des visites gratuites du Palais Garnier, de l'Opéra Bastille et de l'Opéra-Comique. Des visites guidées, ateliers et représentations gratuites sont proposés au public toute la journée. Une occasion de découvrir ces lieux emblématiques de la culture française dans une ambiance festive et accessible.</p>
-        <div class="source">Source : JDD (09/05/2026)</div>
-        <div class="url"><a href="https://www.jds.fr/actu/tous-a-l-opera-le-9-mai-portes-ouvertes-gratuites-au-palais-garnier-a-l-opera-bastille-et-a-l-opera-comique-de-paris-1514378_A">JDD — Tous à l'Opéra</a></div>
-    </div>
-    <div class="news">
-        <h3>Pyongyang : un Français arrêté puis libéré</h3>
-        <p>Un ressortissant français a été brièvement arrêté à Pyongyang avant d'être libéré sans poursuite, ont indiqué les autorités françaises. L'homme, qui résidait en Corée du Nord depuis plusieurs années, a été intercepté lors d'un contrôle routinier avant d'être relâché quelques heures plus tard. Le quai d'Orsay suit le dossier de près.</p>
-        <div class="source">Source : Le Figaro / AFP (08/05/2026)</div>
-    </div>
-
-    <h2>🏛️ Actualité politique</h2>
-    <div class="news">
-        <h3>Manifestations du 9-Mai interdites à Paris</h3>
-        <p>Pour la première fois depuis 2008, le tribunal administratif de Paris a confirmé l'interdiction de la manifestation annuelle du Comité du 9-Mai, groupe d'ultradroite commemorant la mort de Sébastien Deyzieu (1994). La contre-manifestation « antifasciste » a également été interdite. Cette décision marque un tournant dans la gestion de l'ordre public, le gouvernement invoquant les risques de troubles graves à la sérénité publique.</p>
-        <div class="source">Source : Le Nouvel Obs (08/05/2026)</div>
-        <div class="url"><a href="https://www.nouvelobs.com/politique/20260508.OBS114774/la-manifestation-d-extreme-droite-du-9-mai-interdite-pour-la-premiere-fois-depuis-2008.html">Nouvel Obs — Manifestations interdites</a></div>
-    </div>
-    <div class="news">
-        <h3>Un sociologue analyse le succès du Comité du 9-Mai</h3>
-        <p>Dans une tribune du Monde, Emmanuel Casajus, sociologue, explique que le succès croissant des défilés du Comité du 9-Mai traduit un « décloisonnement » entre les différentes chapelles néofascistes françaises. Il souligne une radicalisation progressive du mouvement et une capacité croissante à mobiliser au-delà de son socle historique.</p>
-        <div class="source">Source : Le Monde (08/05/2026)</div>
-        <div class="url"><a href="https://www.lemonde.fr/idees/article/2026/05/08/emmanuel-casajus-sociologue-le-succes-des-derniers-defiles-du-comite-du-9-mai-traduit-un-decloisonnement-entre-les-differentes-chapelles-neofascistes_6686884_3232.html">Le Monde — Sociologie</a></div>
-    </div>
-
-    <h2>🌍 Actualidad (España)</h2>
-    <div class="actualidad">
-        <h3>Bruselas cierra el expediente de España por morosidad pública</h3>
-        <p>La Comisión Europea ha decidido cerrar el expediente que tenía abierto contra España desde 2015 por el exceso de déficit público. Hacienda convenció a Bruselas de que la situación presupuestaria ha mejorado significativamente, aunque el déficit sigue siendo superior al umbral europeo del 3%.</p>
-        <div class="traduction">
-            <span class="traduction-label">🇫🇷 Traduction :</span> Bruxelles referme le dossier de l'Espagne pour déficit excessif — La Commission européenne a décidé de clore le procédures pour déficit public excessif. Le ministère des Finances a convaincu Bruxelles que la situation budgétaire s'est améliorée significativement, même si le déficit reste supérieur au seuil européen de 3%.
+        <div class="section">
+            <div class="saint">🎂 Aujourd'hui, nous célébrons <strong>Saint Solange</strong></div>
+            <p style="text-align:center; color: #aaa;">Fête du 10 Mai : Solange, Blandine, Calépode, Catalde, Épimaque, Gordien, Mondry, Palmace, Philadelphe</p>
         </div>
-        <div class="source">Source : El País (09/05/2026)</div>
-        <div class="url"><a href="https://elpais.com/economia/2026-05-09/bruselas-cierra-el-expediente-que-tenia-abierto-contra-espana-desde-2015-por-la-morosidad-publica.html">El País — Expediente cierre</a></div>
-    </div>
-    <div class="actualidad">
-        <h3>España: déficit comercial récord en 2025, el segundo peor de la UE</h3>
-        <p>España registró en 2025 el segundo mayor déficit comercial de la Unión Europea, solo por detrás de Polonia. El tirón de la inversión y el consumo dispararon las importaciones, mientras la dependencia energética estructural mantiene un lastre sobre la balance comercial española.</p>
-        <div class="traduction">
-            <span class="traduction-label">🇫🇷 Traduction :</span> Espagne : déficit commercial record en 2025, le deuxième pire de l'UE — L'Espagne a enregistré en 2025 le deuxième plus grand déficit commercial de l'Union européenne, juste derrière la Pologne. La dynamique de l'investissement et de la consommation a explosé les importations, tandis que la dépendance énergétique structurelle pèse sur la balance commerciale espagnole.
+
+        <div class="section">
+            <h2>🌤️ Météo — Pau</h2>
+            <div class="meteo">
+                <div class="meteo-item"><div class="time">08h</div><div class="temp">11°C</div><div>🌥️</div></div>
+                <div class="meteo-item"><div class="time">10h</div><div class="temp">15°C</div><div>🌤️</div></div>
+                <div class="meteo-item"><div class="time">12h</div><div class="temp">19°C</div><div>🌤️</div></div>
+                <div class="meteo-item"><div class="time">14h</div><div class="temp">20°C</div><div>⛅</div></div>
+                <div class="meteo-item"><div class="time">16h</div><div class="temp">20°C</div><div>⛅</div></div>
+                <div class="meteo-item"><div class="time">18h</div><div class="temp">18°C</div><div>⛅</div></div>
+                <div class="meteo-item"><div class="time">20h</div><div class="temp">16°C</div><div>⛅</div></div>
+                <div class="meteo-item"><div class="time">22h</div><div class="temp">14°C</div><div>🌥️</div></div>
+            </div>
+            <div class="lever-coucher">🌅 Lever : 06h45 &nbsp;&nbsp;|&nbsp;&nbsp; 🌇 Coucher : 21h20</div>
+            <div style="text-align:center; color: #888; margin-top: 10px;">🌧️ Bruine possible en soirée (21h)</div>
+            <div style="text-align:center; margin-top: 15px; padding: 10px; background: rgba(46,213,115,0.1); border-radius: 8px;">
+                <strong>Demain (Lundi 11 Mai) :</strong> ☀️ Morning晴 • Afternoon ☀️ 20°C — soleil ganzen Tag
+            </div>
         </div>
-        <div class="source">Source : El País (09/05/2026)</div>
-        <div class="url"><a href="https://elpais.com/economia/2026-05-09/espana-registra-en-2025-el-segundo-mayor-deficit-comercial-de-la-ue-por-el-tiron-de-la-economia.html">El País — Déficit comercial</a></div>
-    </div>
 
-    <h2>💭 Pensée du jour</h2>
-    <div class="proverb">
-        « No hay mal que por bien no venga »
-        <span>« Il n'est pas de malheur qui n'apporte quelque bien »</span>
-    </div>
+        <div class="section">
+            <h2>📅 Aujourd'hui</h2>
+            <div class="event event-allday">📌 D Evelyne (toute la journée)</div>
+            <div style="margin-top: 15px; color: #888; font-size: 0.9em;">📅 Demain : RH JNGroupe 10h00 - 12h00</div>
+        </div>
 
-    <h2>💪 Conseil du jour</h2>
-    <div class="conseil">
-        <strong>🎯 Español :</strong> Profite de ce weekend pour réviser 10-15 verbes irréguliers au passé simple (<em>hacer, tener, venir, poder, saber, querer, decir, ser, estar</em>). Utilise la technique « story injection » : crée une mini-histoire avec 5 verbes. Ex : <em>« Hice la maleta, vine a casa, pude salir, supe que había tiempo, fui al médico. »</em> Essaie de raconter ta journée d'hier en 5 phrases !
-        <br><br>
-        <strong>🎲 JDR :</strong> Si tu prépares une nouvelle scène pour Foundry VTT, pense à créer 2-3 « backup tokens » pour tes PNJ secondaires — ça évite les manipulations de dernière minute en jeu.
-    </div>
+        <div class="section">
+            <h2>🌐 International</h2>
+            <div class="news">
+                <h3>🤝 Cessez-le-feu fragile en Iran — les USA mis en garde</h3>
+                <p>Le cessez-le-feu iranien semble tenir bon malgré des tensions croissantes. L'Iran a averti les États-Unis de ne pas attaquer ses tankers et navires au Moyen-Orient. La situation reste fragile dans le détroit d'Ormuz.</p>
+                <div class="source"><span class="badge">INTERNATIONAL</span> PBS News / Reuters (09/05/2026) <a href="https://www.pbs.org/newshour/world/fragile-iran-ceasefire-appears-to-hold-and-bahrain-detains-dozens-over-suspected-revolutionary-guard-links" style="color:#4ecdc4;">→</a></div>
+            </div>
+            <div class="news">
+                <h3>🕊️ Poutine open to ending Ukraine war — new European security deals</h3>
+                <p>Le président russe Vladimir Poutine a déclaré que la guerre en Ukraine pourrait bientôt prendre fin. Il se dit ouvert à de nouvelles arrangements de sécurité en Europe, une déclaration qui survient après des semaines de négociations.</p>
+                <div class="source"><span class="badge">INTERNATIONAL</span> Onmanorama (10/05/2026) <a href="https://www.onmanorama.com/news/world/2026/05/10/russia-ukraine-war-is-coming-to-an-end.html" style="color:#4ecdc4;">→</a></div>
+            </div>
+        </div>
 
-    <div class="footer">
-        Rapport généré par Nestor 🥸 | 9 mai 2026
+        <div class="section">
+            <h2>🌍 Économie & Finance</h2>
+            <div class="news">
+                <h3>📊 Emploi US : +177K en avril, au-dessus des attentes</h3>
+                <p>L'économie américaine a créé 177 000 emplois en avril, un chiffre supérieur aux prévisions des analystes. Cette vigueur du marché du travail pourrait influencer les décisions de la Fed concernant les taux d'intérêt.</p>
+                <div class="source"><span class="badge">ÉCONOMIE</span> Investir / Reuters (08/05/2026) <a href="https://investir.lesechos.fr/marches-indices/economie-politique/usa-les-creations-demplois-plus-importantes-que-prevu-en-avril-2230816" style="color:#4ecdc4;">→</a></div>
+            </div>
+            <div class="news">
+                <h3>🇨🇳 La Chine affiche un commerce vigoureux malgré la guerre au Moyen-Orient</h3>
+                <p>Pékin a annoncé des chiffresrecords pour son commerce extérieur au premier trimestre 2026, montrant une résilience inattendue malgré les conflits en cours au Moyen-Orient et leurs répercussions sur les marchés mondiaux.</p>
+                <div class="source"><span class="badge">ÉCONOMIE</span> Le Figaro / AFP (09/05/2026) <a href="https://www.lefigaro.fr/flash-eco/la-chine-affiche-un-commerce-vigoureux-malgre-la-guerre-au-moyen-orient-20260509" style="color:#4ecdc4;">→</a></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🇫🇷 Société & Culture</h2>
+            <div class="news">
+                <h3>🏛️ Louvre : nouveaux grands travaux approuvés</h3>
+                <p>Christophe Leribault, nouveau président du Louvre, confirme le projet "Nouvelle Renaissance" : un ambitieux plan de rénovation du musée qui s'étalera sur plusieurs années et mobiliserà plusieurs centaines de millions d'euros.</p>
+                <div class="source"><span class="badge">SOCIÉTÉ</span> France Info (09/05/2026) <a href="https://www.franceinfo.fr/culture/arts-expos/louvre/le-nouveau-president-du-louvre-christophe-leribault-confirme-le-projet-de-grands-travaux-du-musee_7986854.html" style="color:#4ecdc4;">→</a></div>
+            </div>
+            <div class="news">
+                <h3>⚖️ Le Conseil d'État rétablit les permissions de sortie pour les détenus</h3>
+                <p>Saisi en référé par l'Observatoire international des prisons, le Conseil d'État a estimé que l'interdiction des permissions de sortie culturelles et sportives portait une "atteinte disproportionnée" aux droits des prisonniers.</p>
+                <div class="source"><span class="badge">SOCIÉTÉ</span> Actu17 (09/05/2026) <a href="https://actu17.fr/societe/le-conseil-detat-retablit-les-permissions-de-sortie-culturelles-et-sportives-des-detenus.html" style="color:#4ecdc4;">→</a></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🏛️ Politique Intérieure</h2>
+            <div class="news">
+                <h3>⚔️ Le Sénat adopte le projet de loi Ripost en commission</h3>
+                <p>La commission des Lois du Sénat a adopté le projet de loi Ripost visant à renforcer la sécurité et la prévention des risques d'attentat. Le texte controversé doit maintenant franchir les étapes du Parlement.</p>
+                <div class="source"><span class="badge">POLITIQUE</span> France24 (06/05/2026) <a href="https://www.france24.com/fr/info-en-continu/20260506-le-s%C3%A9nat-adopte-en-commission-le-projet-de-loi-ripost-du-gouvernement" style="color:#4ecdc4;">→</a></div>
+            </div>
+            <div class="news">
+                <h3>🔍 Le projet de loi "entrisme islamiste" au cœur des débats</h3>
+                <p>Le texte de Bruno Retailleau visant à "lutter contre lentrisme islamiste" continue de diviser. Selon des éditorialistes, le projet "substitue le pouvoir politique au pouvoir judiciaire", soulevant des questions constitutionnelles.</p>
+                <div class="source"><span class="badge">POLITIQUE</span> Le Monde (09/05/2026) <a href="https://www.lemonde.fr/idees/article/2026/05/09/le-projet-de-loi-contre-l-entrisme-islamiste-substitue-le-pouvoir-politique-au-pouvoir-judiciaire_6687464_3232.html" style="color:#4ecdc4;">→</a></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🌍 Actualidad (España)</h2>
+            <div class="news">
+                <h3>🚢 Crisis del Crucero Hondius: Evacuación masiva en Canarias</h3>
+                <p>España coordina una operación internacional sin precedentes para evacuar a los 151 pasajeros del crucero MV Hondius, donde se ha Originado un brote de hantavirus. Los españoles fueron los primeros en abandonar el barco en lanchas neumáticas. El Gobierno ha impuesto a Canarias la acogida del crucero tras la negativa del presidente regional.</p>
+                <div class="source"><span class="badge">ESPAÑA</span> El País / La Vanguardia (10/05/2026) <a href="https://elpais.com/sociedad/2026-05-10/el-gobierno-impone-a-canarias-la-acogida-del-crucero-mv-hondius-ante-la-negativa-de-clavijo-de-autorizar-el-fondeo.html" style="color:#4ecdc4;">→</a></div>
+            </div>
+            <div class="news">
+                <h3>📉 España: emprego crece, pero sin productividad</h3>
+                <p>Un informe del Consejo de Productividad desmonta el "milagro económico" español: el país crea empleo gracias a la inmigración y al crecimiento del sector servicios, pero la productividad por trabajador sigue estancada, cuestionando la sostenibilidad del modelo.</p>
+                <div class="source"><span class="badge">ESPAÑA</span> The Objective / El Confidencial (10/05/2026) <a href="https://theobjective.com/economia/2026-05-10/informe-milagro-economico-espana-empleo/" style="color:#4ecdc4;">→</a></div>
+            </div>
+        </div>
+
+        <div class="proverb">
+            <div class="original">💭 "Camarón que se duerme, se lo lleva la corriente"</div>
+            <div class="translation">||Le crevette qui s'endort est emportée par le courant — Qui ne avance pas recule||</div>
+        </div>
+
+        <div class="section">
+            <h2>💪 Conseil du jour</h2>
+            <div class="conseil">
+                <p>🌴 <strong>Dimanche ensoleillé — parfait pour les projets !</strong></p>
+                <p>Avec 20°C et du soleil, c'est ideal pour une session JDR en extérieur ou pour avancer sur Foundry VTT. Et pour l'espagnol : pourquoi ne pas écouter un podcastspaniol pendant une balade ?</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🥸 Nestor — Rapport du matin — 10/05/2026</p>
+            <p style="margin-top: 5px;"><a href="https://piotrpau.github.io/nestor-rapports/" style="color:#4ecdc4;">piotrpau.github.io/nestor-rapports/</a></p>
+        </div>
     </div>
 </body>
 </html>
