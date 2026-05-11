@@ -3,157 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rapport du Matin - 10 Mai 2026</title>
+    <title>Rapport du 11 mai 2026</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); min-height: 100vh; color: #eee; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; }
-        h1 { text-align: center; color: #e94560; margin-bottom: 5px; font-size: 2em; }
-        .subtitle { text-align: center; color: #888; margin-bottom: 30px; font-size: 1.1em; }
-        .section { background: rgba(255,255,255,0.05); border-radius: 15px; padding: 25px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1); }
-        .section h2 { color: #e94560; margin-bottom: 15px; font-size: 1.3em; border-bottom: 2px solid #e94560; padding-bottom: 8px; }
-        .meteo { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; text-align: center; }
-        .meteo-item { background: rgba(233,69,96,0.2); padding: 15px; border-radius: 10px; }
-        .meteo-item .time { font-size: 0.9em; color: #888; }
-        .meteo-item .temp { font-size: 1.8em; font-weight: bold; }
-        .event { background: rgba(46,213,115,0.1); padding: 12px 15px; border-radius: 8px; margin-bottom: 8px; border-left: 3px solid #2ed573; }
-        .event-allday { background: rgba(255,215,0,0.1); border-left-color: #ffd700; }
-        .news { margin-bottom: 15px; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 10px; }
-        .news h3 { color: #4ecdc4; margin-bottom: 8px; font-size: 1.1em; }
-        .news p { color: #ccc; line-height: 1.6; }
-        .news .source { color: #666; font-size: 0.85em; margin-top: 8px; }
-        .saint { text-align: center; font-size: 1.2em; color: #ffd700; margin-bottom: 20px; }
-        .lever-coucher { text-align: center; color: #888; margin: 15px 0; font-size: 1.1em; }
-        .proverb { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px; text-align: center; margin: 20px 0; }
-        .proverb .original { font-size: 1.3em; color: #fff; margin-bottom: 10px; }
-        .proverb .translation { color: #ddd; font-style: italic; }
-        .conseil { background: rgba(255,159,67,0.1); padding: 15px; border-radius: 10px; border-left: 3px solid #ff9f43; }
-        .badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 0.75em; background: #e94560; color: #fff; margin-right: 8px; }
-        .footer { text-align: center; color: #666; margin-top: 30px; font-size: 0.9em; }
-        .correction { background: rgba(255,193,7,0.1); border: 1px solid #ffc107; padding: 10px 15px; border-radius: 8px; margin-bottom: 15px; font-size: 0.9em; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f1419; color: #e7e9ea; min-height: 100vh; padding: 20px; }
+        .container { max-width: 680px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 24px; padding: 20px; background: linear-gradient(135deg, #1a1f2e, #2d3748); border-radius: 16px; }
+        .header h1 { font-size: 1.4em; color: #f7c948; margin-bottom: 8px; }
+        .header .date { color: #8899a6; font-size: 0.9em; }
+        .header .saint { color: #f7c948; font-size: 1.1em; margin-top: 10px; }
+        .meteo { background: linear-gradient(135deg, #1e3a5f, #1a2332); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+        .meteo-grid { display: flex; justify-content: space-between; text-align: center; margin: 12px 0; }
+        .meteo-item { font-size: 0.85em; }
+        .meteo-temp { font-size: 1.3em; font-weight: bold; color: #f7c948; }
+        .meteo-label { color: #8899a6; font-size: 0.75em; }
+        .sun { text-align: center; margin-top: 10px; color: #8899a6; font-size: 0.9em; }
+        .sun span { color: #f7c948; }
+        .event { background: #192734; border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; border-left: 3px solid #f7c948; }
+        .event-title { color: #f7c948; font-weight: bold; }
+        .event-time { color: #8899a6; font-size: 0.85em; margin-top: 4px; }
+        .section { background: #192734; border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+        .section-title { font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #2f3f4f; }
+        .news { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #2f3f4f; }
+        .news:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .news-title { font-size: 0.95em; color: #f7c948; margin-bottom: 6px; line-height: 1.4; }
+        .news-body { font-size: 0.85em; color: #ccd6dd; line-height: 1.5; margin-bottom: 6px; }
+        .news-meta { font-size: 0.75em; color: #8899a6; }
+        .news-meta a { color: #8899a6; text-decoration: none; }
+        .news-meta a:hover { text-decoration: underline; }
+        .proverb { background: linear-gradient(135deg, #1a2a3a, #1e3a5f); border-radius: 12px; padding: 16px; margin-bottom: 12px; text-align: center; }
+        .proverb-es { font-size: 1.1em; color: #f7c948; margin-bottom: 8px; font-style: italic; }
+        .proverb-fr { font-size: 0.9em; color: #ccd6dd; }
+        .conseil { background: linear-gradient(135deg, #2d3a1f, #1e3a5f); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+        .conseil-text { color: #ccd6dd; font-size: 0.9em; line-height: 1.5; }
+        .footer { text-align: center; margin-top: 20px; color: #8899a6; font-size: 0.75em; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🌅 Rapport du Matin</h1>
-        <p class="subtitle">Dimanche 10 Mai 2026 — Pau, France</p>
-
-        <div class="section">
-            <div class="saint">🎂 Aujourd'hui, nous célébrons <strong>Saint Solange</strong></div>
-            <p style="text-align:center; color: #aaa;">Fête du 10 Mai : Solange, Blandine, Calépode, Catalde, Épimaque, Gordien, Mondry, Palmace, Philadelphe</p>
+        <div class="header">
+            <h1>🌅 Bonjour Pierre !</h1>
+            <div class="date">Lundi 11 mai 2026</div>
+            <div class="saint">Sainte Estelle 🌟 — prénom d'origine grecque signifiant « étoile »</div>
         </div>
 
-        <div class="section">
-            <h2>🌤️ Météo — Pau</h2>
-            <div class="meteo">
-                <div class="meteo-item"><div class="time">08h</div><div class="temp">11°C</div><div>🌥️</div></div>
-                <div class="meteo-item"><div class="time">10h</div><div class="temp">15°C</div><div>🌤️</div></div>
-                <div class="meteo-item"><div class="time">12h</div><div class="temp">19°C</div><div>🌤️</div></div>
-                <div class="meteo-item"><div class="time">14h</div><div class="temp">20°C</div><div>⛅</div></div>
-                <div class="meteo-item"><div class="time">16h</div><div class="temp">20°C</div><div>⛅</div></div>
-                <div class="meteo-item"><div class="time">18h</div><div class="temp">18°C</div><div>⛅</div></div>
-                <div class="meteo-item"><div class="time">20h</div><div class="temp">16°C</div><div>⛅</div></div>
-                <div class="meteo-item"><div class="time">22h</div><div class="temp">14°C</div><div>🌥️</div></div>
+        <div class="meteo">
+            <div style="text-align:center;color:#f7c948;font-weight:bold;margin-bottom:10px;">🌤️ Météo du jour — Pau</div>
+            <div class="meteo-grid">
+                <div class="meteo-item"><div class="meteo-temp">7.4°C</div><div class="meteo-label">08h</div><div>🌫️</div></div>
+                <div class="meteo-item"><div class="meteo-temp">17.7°C</div><div class="meteo-label">12h</div><div>☀️</div></div>
+                <div class="meteo-item"><div class="meteo-temp">19.2°C</div><div class="meteo-label">16h</div><div>☀️</div></div>
+                <div class="meteo-item"><div class="meteo-temp">14.7°C</div><div class="meteo-label">22h</div><div>🌙</div></div>
             </div>
-            <div class="lever-coucher">🌅 Lever : 06h45 &nbsp;&nbsp;|&nbsp;&nbsp; 🌇 Coucher : 21h20</div>
-            <div style="text-align:center; color: #888; margin-top: 10px;">🌧️ Bruine possible en soirée (21h)</div>
-            <div style="text-align:center; margin-top: 15px; padding: 10px; background: rgba(46,213,115,0.1); border-radius: 8px;">
-                <strong>Demain (Lundi 11 Mai) :</strong> ☀️ Morning晴 • Afternoon ☀️ 20°C — soleil ganzen Tag
-            </div>
+            <div class="sun">🌅 lever <span>06h41</span> • 🌇 coucher <span>21h14</span></div>
+        </div>
+
+        <div class="event">
+            <div class="event-title">📅 RH JNGroupe</div>
+            <div class="event-time">10h00 - 12h00</div>
         </div>
 
         <div class="section">
-            <h2>📅 Aujourd'hui</h2>
-            <div class="event event-allday">📌 D Evelyne (toute la journée)</div>
-            <div style="margin-top: 15px; color: #888; font-size: 0.9em;">📅 Demain : RH JNGroupe 10h00 - 12h00</div>
-        </div>
-
-        <div class="section">
-            <h2>🌐 International</h2>
+            <div class="section-title">🌐 Actualité internationale</div>
             <div class="news">
-                <h3>🤝 Cessez-le-feu fragile en Iran — les USA mis en garde</h3>
-                <p>Le cessez-le-feu iranien semble tenir bon malgré des tensions croissantes. L'Iran a averti les États-Unis de ne pas attaquer ses tankers et navires au Moyen-Orient. La situation reste fragile dans le détroit d'Ormuz.</p>
-                <div class="source"><span class="badge">INTERNATIONAL</span> PBS News / Reuters (09/05/2026) <a href="https://www.pbs.org/newshour/world/fragile-iran-ceasefire-appears-to-hold-and-bahrain-detains-dozens-over-suspected-revolutionary-guard-links" style="color:#4ecdc4;">→</a></div>
+                <div class="news-title">Poutine propose l'ex-chancelier Schröder comme médiateur pour l'Ukraine ; Berlin reste sceptique</div>
+                <div class="news-body">Le président russe a suggéré l'ancien chancelier allemand Gerhard Schröder pour mediar entre Moscou et Kiev, une proposition accueillie avec froideur par l'Allemagne qui a rappelé que M. Schröder est persona non grata depuis sa proximité avec Poutine. Cette offre intervient alors que les négociations de paix patinent.</div>
+                <div class="news-meta"><em>Le Monde</em> (10/05/2026) <a href="https://www.lemonde.fr/international/article/2026/05/10/guerre-en-ukraine-vladimir-poutine-propose-l-ex-chancelier-schroder-comme-mediateur-berlin-sceptique_6687731_3210.html">🔗</a></div>
             </div>
             <div class="news">
-                <h3>🕊️ Poutine open to ending Ukraine war — new European security deals</h3>
-                <p>Le président russe Vladimir Poutine a déclaré que la guerre en Ukraine pourrait bientôt prendre fin. Il se dit ouvert à de nouvelles arrangements de sécurité en Europe, une déclaration qui survient après des semaines de négociations.</p>
-                <div class="source"><span class="badge">INTERNATIONAL</span> Onmanorama (10/05/2026) <a href="https://www.onmanorama.com/news/world/2026/05/10/russia-ukraine-war-is-coming-to-an-end.html" style="color:#4ecdc4;">→</a></div>
+                <div class="news-title">Accord de paix Iran-États-Unis : Téhéran temporise, Washington s'impatiente</div>
+                <div class="news-body">Malgré l'accord de cessez-le-feu conclu début mai, l'Iran a retardé sa réponse à la proposition américaine finale, provoquant l'impatience de Washington. Des échanges de tirs ont eu lieu dans le détroit d'Ormuz, ravivant les craintes d'une escalade.</div>
+                <div class="news-meta"><em>France Info</em> (10/05/2026) <a href="https://www.franceinfo.fr/monde/conflit-israel-iran/accord-de-paix-teheran-temporise-washington-s-impatiente_7995119.html">🔗</a></div>
             </div>
         </div>
 
         <div class="section">
-            <h2>🌍 Économie & Finance</h2>
+            <div class="section-title">🌍 Actualité économique</div>
             <div class="news">
-                <h3>📊 Emploi US : +177K en avril, au-dessus des attentes</h3>
-                <p>L'économie américaine a créé 177 000 emplois en avril, un chiffre supérieur aux prévisions des analystes. Cette vigueur du marché du travail pourrait influencer les décisions de la Fed concernant les taux d'intérêt.</p>
-                <div class="source"><span class="badge">ÉCONOMIE</span> Investir / Reuters (08/05/2026) <a href="https://investir.lesechos.fr/marches-indices/economie-politique/usa-les-creations-demplois-plus-importantes-que-prevu-en-avril-2230816" style="color:#4ecdc4;">→</a></div>
+                <div class="news-title">La Banque mondiale prévoit une hausse de 24% des prix de l'énergie en 2026</div>
+                <div class="news-body">La Banque mondiale alerte sur une flambée des prix de l'énergie, nourrie par le conflit au Moyen-Orient. Il s'agirait de la plus forte hausse en quatre ans. Cette situation menace la reprise économique mondiale et pourrait faire reculer la croissance de plusieurs pays développés.</div>
+                <div class="news-meta"><em>Boursier.com</em> (28/04/2026) <a href="https://www.boursier.com/actualites/reuters/la-banque-mondiale-prevoit-une-hausse-de-24-des-prix-de-l-energie-en-2026-417007.html">🔗</a></div>
             </div>
             <div class="news">
-                <h3>🇨🇳 La Chine affiche un commerce vigoureux malgré la guerre au Moyen-Orient</h3>
-                <p>Pékin a annoncé des chiffres records pour son commerce extérieur au premier trimestre 2026, montrant une résilience inattendue malgré les conflits en cours au Moyen-Orient et leurs répercussions sur les marchés mondiaux.</p>
-                <div class="source"><span class="badge">ÉCONOMIE</span> Le Figaro / AFP (09/05/2026) <a href="https://www.lefigaro.fr/flash-eco/la-chine-affiche-un-commerce-vigoureux-malgre-la-guerre-au-moyen-orient-20260509" style="color:#4ecdc4;">→</a></div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>🇫🇷 Société & Culture</h2>
-            <div class="news">
-                <h3>🏛️ Louvre : nouveaux grands travaux approuvés</h3>
-                <p>Christophe Leribault, nouveau président du Louvre, confirme le projet "Nouvelle Renaissance" : un ambitieux plan de rénovation du musée qui s'étalera sur plusieurs années et mobilisera plusieurs centaines de millions d'euros.</p>
-                <div class="source"><span class="badge">SOCIÉTÉ</span> France Info (09/05/2026) <a href="https://www.franceinfo.fr/culture/arts-expos/louvre/le-nouveau-president-du-louvre-christophe-leribault-confirme-le-projet-de-grands-travaux-du-musee_7986854.html" style="color:#4ecdc4;">→</a></div>
-            </div>
-            <div class="news">
-                <h3>⚖️ Le Conseil d'État rétablit les permissions de sortie pour les détenus</h3>
-                <p>Saisi en référé par l'Observatoire international des prisons, le Conseil d'État a estimé que l'interdiction des permissions de sortie culturelles et sportives portait une "atteinte disproportionnée" aux droits des prisonniers.</p>
-                <div class="source"><span class="badge">SOCIÉTÉ</span> Actu17 (09/05/2026) <a href="https://actu17.fr/societe/le-conseil-detat-retablit-les-permissions-de-sortie-culturelles-et-sportives-des-detenus.html" style="color:#4ecdc4;">→</a></div>
+                <div class="news-title">Les taux remontent, poussés par la hausse des prix du pétrole</div>
+                <div class="news-body">Les rendements obligataires repartent à la hausse sous l'effet du renchérissement du brut. Les taux longs retrouvent leur niveau de début d'année, un mouvement qui pourrait se répercuter sur les crédits immobilier et consumer.</div>
+                <div class="news-meta"><em>ABC Bourse</em> (01/05/2026) <a href="https://www.abcbourse.com/marches/les-taux-remontent-pousses-par-la-hausse-des-prix-du-petrole_696198">🔗</a></div>
             </div>
         </div>
 
         <div class="section">
-            <h2>🏛️ Politique Intérieure</h2>
+            <div class="section-title">📰 Actualité française</div>
             <div class="news">
-                <h3>🌍 Macron au Kenya : "relation refondée" avec l'Afrique</h3>
-                <p>Emmanuel Macron effectue dimanche une visite au Kenya, pays anglophone emblématique de sa stratégie de "relation refondée" avec l'Afrique. Cette visite s'inscrit dans un contexte de rivalité accrue avec la Chine et la Russie sur le continent.</p>
-                <div class="source"><span class="badge">POLITIQUE</span> France24 (10/05/2026) <a href="https://www.france24.com/fr/info-en-continu/20260510-macron-attendu-au-kenya-embl%C3%A8me-de-sa-relation-refond%C3%A9e-%C3%A0-l-afrique" style="color:#4ecdc4;">→</a></div>
+                <div class="news-title">Les bibliothèques de Paris en grève pour dénoncer les sous-effectifs</div>
+                <div class="news-body">Les salariés des bibliothèques parisiennes ont débrayé pour protester contre le manque de personnel et la sureffectif qui dégradent leurs conditions de travail. Plusieurs établissements sont restés fermés toute la journée.</div>
+                <div class="news-meta"><em>Le Parisien</em> (07/05/2026) <a href="https://www.leparisien.fr/paris-75/greve-dans-les-bibliotheques-de-paris-jeudi-pour-denoncer-sous-effectifs-et-surfrequentation-06-05-2026-3KH6V7ECI5DHZAO53AWIEQK32I.php">🔗</a></div>
             </div>
             <div class="news">
-                <h3>💰 Assurance-chômage : 800M€ pour la France</h3>
-                <p>La France a obtenu une réforme du système d'assurance-chômage des transfrontaliers qui devrait lui rapporter près de 800 millions d'euros. Un gain budgétaire important pour les finances publiques françaises.</p>
-                <div class="source"><span class="badge">POLITIQUE</span> Le Monde (09/05/2026) <a href="https://www.lemonde.fr/politique/article/2026/05/09/assurance-chomage-des-transfrontaliers-la-france-obtient-une-reforme-du-systeme-qui-devrait-lui-rapporter-pres-de-800-millions-d-euros_6687413_823448.html" style="color:#4ecdc4;">→</a></div>
+                <div class="news-title">Le nouveau président du Louvre confirme les grands travaux du musée</div>
+                <div class="news-body">Christophe Leribault, nommé à la tête du Louvre, a confirmé le plan de rénovation ambitieux « Nouvelle Renaissance », qui prévoit plusieurs années de travaux et une fermeture partielle de certaines ailes.</div>
+                <div class="news-meta"><em>France Info</em> (07/05/2026) <a href="https://www.franceinfo.fr/culture/arts-expos/louvre/le-nouveau-president-du-louvre-christophe-leribault-confirme-le-projet-de-grands-travaux-du-musee_7986854.html">🔗</a></div>
             </div>
         </div>
 
         <div class="section">
-            <h2>🌍 Actualidad (España)</h2>
+            <div class="section-title">⚔️ Actualité politique</div>
             <div class="news">
-                <h3>🚢 Crisis del Crucero Hondius: Evacuación masiva en Canarias</h3>
-                <p>España coordina una operación internacional sin precedentes para evacuar a los 151 pasajeros del crucero MV Hondius, donde se ha originado un brote de hantavirus. Los españoles fueron los primeros en abandonar el barco en lanchas neumáticas. El Gobierno ha impuesto a Canarias la acogida del crucero tras la negativa del presidente regional.</p>
-                <div class="source"><span class="badge">ESPAÑA</span> El País / La Vanguardia (10/05/2026) <a href="https://elpais.com/sociedad/2026-05-10/el-gobierno-impone-a-canarias-la-acogida-del-crucero-mv-hondius-ante-la-negativa-de-clavijo-de-autorizar-el-fondeo.html" style="color:#4ecdc4;">→</a></div>
+                <div class="news-title">Le Sénat adopte en commission le projet de loi Ripost du gouvernement</div>
+                <div class="news-body">La commission des Lois du Sénat a adopté le texte Ripost, qui renforce les pouvoirs de police et prévoit des mesures controversées sur la surveillance. Le gouvernement espère un vote définitif rapide.</div>
+                <div class="news-meta"><em>France 24</em> (06/05/2026) <a href="https://www.france24.com/fr/info-en-continu/20260506-le-s%C3%A9nat-adopte-en-commission-le-projet-de-loi-ripost-du-gouvernement">🔗</a></div>
             </div>
             <div class="news">
-                <h3>📉 España: empleo crece, pero sin productividad</h3>
-                <p>Un informe del Consejo de Productividad desmonta el "milagro económico" español: el país crea empleo gracias a la inmigración y al crecimiento del sector servicios, pero la productividad por trabajador sigue estancada, cuestionando la sostenibilidad del modelo.</p>
-                <div class="source"><span class="badge">ESPAÑA</span> The Objective / El Confidencial (10/05/2026) <a href="https://theobjective.com/economia/2026-05-10/informe-milagro-economico-espana-empleo/" style="color:#4ecdc4;">→</a></div>
+                <div class="news-title">Ultime feu vert du Parlement au texte contre les fraudes sociales et fiscales</div>
+                <div class="news-body">Le Parlement a adopté définitivement le projet de loi visant à renforcer la lutte contre les fraudes sociales et fiscales, un texte qui suscite des débats sur l'équilibre entre contrôle et droits des assurés.</div>
+                <div class="news-meta"><em>Notre Temps</em> (mai 2026) <a href="https://www.notretemps.com/depeches/ultime-feu-vert-du-parlement-a-un-texte-de-lutte-contre-les-fraudes-sociales-et-fiscales-132454">🔗</a></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">🇪🇸 Actualidad</div>
+            <div class="news">
+                <div class="news-title">El Gobierno aprueba 179 medidas legislativas ante la situación internacional convulsa</div>
+                <div class="news-body">El Consejo de Ministros ha presentado su plan normativo anual con 179 medidas, priorizando lo económico y social ante la incertidumbre global. Pedro Sánchez mantiene su hoja de ruta para completar la législature.</div>
+                <div class="news-meta"><em>El País</em> (05/05/2026) <a href="https://elpais.com/espana/2026-05-05/el-gobierno-pretende-impulsar-179-medidas-legislativas-este-ano.html">🔗</a></div>
+            </div>
+            <div class="news">
+                <div class="news-title">Bruselas cierra el expediente de España por la morosidad pública tras siete años</div>
+                <div class="news-body">La Comisión Europea ha cerrado el expediente abierto contra España desde 2015 por la morosidad en el pago de facturas a proveedores, tras demostrar una mejora sustancial de la situación.</div>
+                <div class="news-meta"><em>El País</em> (09/05/2026) <a href="https://elpais.com/economia/2026-05-09/bruselas-cierra-el-expediente-que-tenia-abierto-contra-espana-desde-2015-por-la-morosidad-publica.html">🔗</a></div>
             </div>
         </div>
 
         <div class="proverb">
-            <div class="original">💭 "Camarón que se duerme, se lo lleva la corriente"</div>
-            <div class="translation">||Le crevette qui s'endort est emportée par le courant — Qui ne avance pas recule||</div>
+            <div class="proverb-es">💭 <em>Quien mucho corre, cansado llega</em></div>
+            <div class="proverb-fr">||Qui beaucoup court, arrive fatigué — proverbe espagnol||</div>
         </div>
 
-        <div class="section">
-            <h2>💪 Conseil du jour</h2>
-            <div class="conseil">
-                <p>🌴 <strong>Dimanche ensoleillé — parfait pour les projets !</strong></p>
-                <p>Avec 20°C et du soleil, c'est idéal pour une session JDR en extérieur ou pour avancer sur Foundry VTT. Et pour l'espagnol : pourquoi ne pas écouter un podcastspaniol pendant une balade ?</p>
-            </div>
+        <div class="conseil">
+            <div class="conseil-text">💪 <strong>Conseil :</strong> Cette semaine, il fait beau et les événements sont légers — c'est le moment de programmer une session JDR sur Foundry VTT pour Théodore et Cassandre, ou de relancer ta routine d'espagnol avec 15 minutes par jour. Courir est bien, mais arriver reposé, c'est mieux !</div>
         </div>
 
         <div class="footer">
-            <p>🥸 Nestor — Rapport du matin — 10/05/2026 (corrigé)</p>
-            <p style="margin-top: 5px;"><a href="https://piotrpau.github.io/nestor-rapports/" style="color:#4ecdc4;">piotrpau.github.io/nestor-rapports/</a></p>
+            Rapport généré par Nestor • 11/05/2026
         </div>
     </div>
 </body>
