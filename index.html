@@ -1,150 +1,159 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rapport du 11 mai 2026</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f1419; color: #e7e9ea; min-height: 100vh; padding: 20px; }
-        .container { max-width: 680px; margin: 0 auto; }
-        .header { text-align: center; margin-bottom: 24px; padding: 20px; background: linear-gradient(135deg, #1a1f2e, #2d3748); border-radius: 16px; }
-        .header h1 { font-size: 1.4em; color: #f7c948; margin-bottom: 8px; }
-        .header .date { color: #8899a6; font-size: 0.9em; }
-        .header .saint { color: #f7c948; font-size: 1.1em; margin-top: 10px; }
-        .meteo { background: linear-gradient(135deg, #1e3a5f, #1a2332); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
-        .meteo-grid { display: flex; justify-content: space-between; text-align: center; margin: 12px 0; }
-        .meteo-item { font-size: 0.85em; }
-        .meteo-temp { font-size: 1.3em; font-weight: bold; color: #f7c948; }
-        .meteo-label { color: #8899a6; font-size: 0.75em; }
-        .sun { text-align: center; margin-top: 10px; color: #8899a6; font-size: 0.9em; }
-        .sun span { color: #f7c948; }
-        .event { background: #192734; border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; border-left: 3px solid #f7c948; }
-        .event-title { color: #f7c948; font-weight: bold; }
-        .event-time { color: #8899a6; font-size: 0.85em; margin-top: 4px; }
-        .section { background: #192734; border-radius: 12px; padding: 16px; margin-bottom: 12px; }
-        .section-title { font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #2f3f4f; }
-        .news { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #2f3f4f; }
-        .news:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .news-title { font-size: 0.95em; color: #f7c948; margin-bottom: 6px; line-height: 1.4; }
-        .news-body { font-size: 0.85em; color: #ccd6dd; line-height: 1.5; margin-bottom: 6px; }
-        .news-meta { font-size: 0.75em; color: #8899a6; }
-        .news-meta a { color: #8899a6; text-decoration: none; }
-        .news-meta a:hover { text-decoration: underline; }
-        .proverb { background: linear-gradient(135deg, #1a2a3a, #1e3a5f); border-radius: 12px; padding: 16px; margin-bottom: 12px; text-align: center; }
-        .proverb-es { font-size: 1.1em; color: #f7c948; margin-bottom: 8px; font-style: italic; }
-        .proverb-fr { font-size: 0.9em; color: #ccd6dd; }
-        .conseil { background: linear-gradient(135deg, #2d3a1f, #1e3a5f); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
-        .conseil-text { color: #ccd6dd; font-size: 0.9em; line-height: 1.5; }
-        .footer { text-align: center; margin-top: 20px; color: #8899a6; font-size: 0.75em; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapport du matin — 12 mai 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d1117; color: #e6edf3; min-height: 100vh; padding: 20px; }
+  .container { max-width: 850px; margin: 0 auto; }
+  header { text-align: center; padding: 30px 0; border-bottom: 1px solid #30363d; margin-bottom: 30px; }
+  h1 { font-size: 2em; color: #58a6ff; }
+  .date { color: #8b949e; margin-top: 8px; }
+  .saint { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+  .saint h2 { color: #f0883e; font-size: 1.4em; margin-bottom: 8px; }
+  .saint p { color: #8b949e; font-style: italic; }
+  .meteo { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+  .meteo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; margin: 15px 0; }
+  .meteo-item { background: #0d1117; padding: 12px; border-radius: 8px; }
+  .meteo-item .heure { color: #8b949e; font-size: 0.85em; }
+  .meteo-item .temp { font-size: 1.5em; font-weight: bold; color: #58a6ff; }
+  .meteo-sunset { display: flex; justify-content: space-around; margin-top: 15px; color: #8b949e; }
+  .section { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+  .section h3 { color: #f0883e; border-bottom: 1px solid #30363d; padding-bottom: 10px; margin-bottom: 15px; font-size: 1.1em; }
+  .section p { line-height: 1.7; color: #c9d1d9; }
+  .section .emoji { font-size: 1.3em; margin-right: 8px; }
+  .actus { margin-bottom: 15px; padding: 15px; background: #0d1117; border-radius: 8px; }
+  .actus h4 { color: #58a6ff; margin-bottom: 8px; font-size: 1em; }
+  .actus p { color: #c9d1d9; font-size: 0.95em; line-height: 1.6; }
+  .actus .source { color: #8b949e; font-size: 0.8em; margin-top: 8px; }
+  .proverbe { background: linear-gradient(135deg, #1c2a3a, #162033); border: 1px solid #58a6ff40; border-radius: 12px; padding: 25px; text-align: center; margin-bottom: 20px; }
+  .proverbe .original { font-size: 1.3em; color: #58a6ff; margin-bottom: 10px; font-style: italic; }
+  .proverbe .traduction { color: #8b949e; font-size: 0.95em; }
+  .conseil { background: linear-gradient(135deg, #2d2a1e, #1e1c14); border: 1px solid #f0883e40; border-radius: 12px; padding: 20px; }
+  .conseil h4 { color: #f0883e; margin-bottom: 10px; }
+  .conseil p { color: #c9d1d9; line-height: 1.6; }
+  .footer { text-align: center; padding: 20px; color: #8b949e; font-size: 0.85em; margin-top: 30px; }
+  @media (max-width: 600px) { .meteo-grid { grid-template-columns: repeat(2, 1fr); } }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🌅 Bonjour Pierre !</h1>
-            <div class="date">Lundi 11 mai 2026</div>
-            <div class="saint">Sainte Estelle 🌟 — prénom d'origine grecque signifiant « étoile »</div>
-        </div>
+<div class="container">
+  <header>
+    <h1>📰 Rapport du matin</h1>
+    <p class="date">Mardi 12 mai 2026 — Pau, Pyrénées-Atlantiques</p>
+  </header>
 
-        <div class="meteo">
-            <div style="text-align:center;color:#f7c948;font-weight:bold;margin-bottom:10px;">🌤️ Météo du jour — Pau</div>
-            <div class="meteo-grid">
-                <div class="meteo-item"><div class="meteo-temp">7.4°C</div><div class="meteo-label">08h</div><div>🌫️</div></div>
-                <div class="meteo-item"><div class="meteo-temp">17.7°C</div><div class="meteo-label">12h</div><div>☀️</div></div>
-                <div class="meteo-item"><div class="meteo-temp">19.2°C</div><div class="meteo-label">16h</div><div>☀️</div></div>
-                <div class="meteo-item"><div class="meteo-temp">14.7°C</div><div class="meteo-label">22h</div><div>🌙</div></div>
-            </div>
-            <div class="sun">🌅 lever <span>06h41</span> • 🌇 coucher <span>21h14</span></div>
-        </div>
+  <div class="saint">
+    <h2>🎂 Saint du jour : Achille</h2>
+    <p>Du grec <em>Achilleus</em> — "celui qui a un problème de talon" 🍗 Saint Achille est célébrer aujourd'hui avec Saint Épiphane, Saint Germain, Saint Modoald, Saint Nérée, Saint Pancrace, Sainte Rastragène et Sainte Rictrude.</p>
+  </div>
 
-        <div class="event">
-            <div class="event-title">📅 RH JNGroupe</div>
-            <div class="event-time">10h00 - 12h00</div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">🌐 Actualité internationale</div>
-            <div class="news">
-                <div class="news-title">Poutine propose l'ex-chancelier Schröder comme médiateur pour l'Ukraine ; Berlin reste sceptique</div>
-                <div class="news-body">Le président russe a suggéré l'ancien chancelier allemand Gerhard Schröder pour mediar entre Moscou et Kiev, une proposition accueillie froidement par l'Allemagne qui a rappelé que M. Schröder est persona non grata depuis sa proximité avec Poutine. Cette offre intervient alors que les négociations de paix patinent.</div>
-                <div class="news-meta"><em>Le Monde</em> (10/05/2026) <a href="https://www.lemonde.fr/international/article/2026/05/10/guerre-en-ukraine-vladimir-poutine-propose-l-ex-chancelier-schroder-comme-mediateur-berlin-sceptique_6687731_3210.html">🔗</a></div>
-            </div>
-            <div class="news">
-                <div class="news-title">Netanyahou veut poursuivre l'intervention en Iran pour « retirer les stocks d'uranium »</div>
-                <div class="news-body">Le Premier ministre israelí Benyamin Netanyahou a déclaré que la guerre ne serait pas finie tant que la question de l'uranium enrichi n'est pas réglée, refusant d'interrompre l'intervention malgré les pressions internationales en faveur d'un cessez-le-feu.</div>
-                <div class="news-meta"><em>Le Parisien</em> (11/05/2026) <a href="https://www.leparisien.fr/international/israel/la-guerre-nest-pas-finie-netanyahou-veut-poursuivre-lintervention-en-iran-pour-retirer-les-stocks-duranium-11-05-2026-ZI5ELQNEAZD5LKNRCRNESKJMSA.php">🔗</a></div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">🌍 Actualité économique</div>
-            <div class="news">
-                <div class="news-title">Aramco: bénéfice en hausse de 25% au T1, porté par la flambée du pétrole</div>
-                <div class="news-body">Le géant pétrolier saoudien Aramco a annoncé une hausse de 25,5% de son bénéfice net au premier trimestre, tiré par l'envolée des prix du brut due aux tensions au Moyen-Orient. Un rebond qui profite également à Totalenergies.</div>
-                <div class="news-meta"><em>BFM TV / Investir</em> (10/05/2026) <a href="https://www.bfmtv.com/economie/international/il-profite-de-la-flambee-du-petrole-comme-totalenergies-le-benefice-du-geant-saoudien-aramco-bondit-de-25-5-au-premier-trimestre_AD-202605100208.html">🔗</a></div>
-            </div>
-            <div class="news">
-                <div class="news-title">Guerre en Iran et volatilité des changes : les géants du CAC 40 mis à l'épreuve</div>
-                <div class="news-body">Les entreprises du CAC 40 publish their quarterly results face aux perturbations liées au conflit au Moyen-Orient et à la volatilité des devises. Certains enregistrent des records de bénéfice, d'autres subissent des revers liés aux devises et à la confiance des consommateurs.</div>
-                <div class="news-meta"><em>Les Echos</em> (10/05/2026) <a href="https://www.lesechos.fr/industrie-services/conso-distribution/guerre-en-iran-volatilite-des-changes-ia-les-geants-du-cac-40-de-nouveau-mis-a-lepreuve-2230885">🔗</a></div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">📰 Actualité française</div>
-            <div class="news">
-                <div class="news-title">La loi sur la restitution des œuvres pillées pendant la colonisation publiée au Journal officiel</div>
-                <div class="news-body">La France a promulgué une loi facilitant la restitution des œuvres d'art pillées durant la colonisation, demandedée depuis des années par plusieurs pays africains. Cette loi permet au gouvernement d'acter la sortie definitive de biens culturels confisqués ou acquis dans des conditions contestées.</div>
-                <div class="news-meta"><em>BFM TV / Le Monde</em> (10/05/2026) <a href="https://www.bfmtv.com/international/afrique/la-france-promulgue-une-loi-facilitant-la-restitution-des-oeuvres-pillees-pendant-la-colonisation-reclamee-depuis-des-annees-en-afrique_AN-202605100066.html">🔗</a></div>
-            </div>
-            <div class="news">
-                <div class="news-title">Record d'audience pour le cinéma espagnol: 7 millions de spectateurs en avril 2026</div>
-                <div class="news-body">Le cinéma espagnol connaît un moment historique avec 7 millions de spectateurs en avril 2026, un record absolu depuis 2019. Cette embellie profite à l'ensemble de la filière, entre productions locales et blockbusters internationaux tournés en Espagne.</div>
-                <div class="news-meta"><em>Aluciné</em> (10/05/2026) <a href="https://www.alucine.es/2026/05/10/el-cine-espanol-resucita-record-de-7-millones-de-espectadores-en-abril-de-2026/">🔗</a></div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">⚔️ Actualité politique</div>
-            <div class="news">
-                <div class="news-title">Macron plaide pour une « reprise » des relations avec l'Algérie</div>
-                <div class="news-body">En conférence de presse au Kenya, le président Emmanuel Macron a déclaré espérer le début d'une « reprise » des relations avec l'Algérie, tout en fustigeant les « postures de politique intérieure » qui ont envenimé les liens entre les deux pays ces dernières années.</div>
-                <div class="news-meta"><em>Le Parisien</em> (10/05/2026) <a href="https://www.leparisien.fr/politique/algerie-macron-dit-esperer-le-debut-dune-reprise-des-relations-fustige-les-postures-de-politique-interieure-10-05-2026-YCQQDT5SNFFBXIFA3KD2J3RXKI.php">🔗</a></div>
-            </div>
-            <div class="news">
-                <div class="news-title">Édouard Philippe défend la « raison » face aux « idées dangereuses » du RN et de LFI à Reims</div>
-                <div class="news-body">L'ancien Premier ministre Édouard Philippe a prononcé un discours à Reims pour défendre son mouvement « Horizes » face à la montée des extrêmes, qualifiant tant le RN que LFI d'« idées dangereuses » pour la démocratie.</div>
-                <div class="news-meta"><em>Le Figaro</em> (10/05/2026) <a href="https://www.lefigaro.fr/politique/a-reims-edouard-philippe-defend-la-raison-face-aux-idees-dangereuses-du-rn-et-de-lfi-20260510">🔗</a></div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">🇪🇸 Actualidad</div>
-            <div class="news">
-                <div class="news-title">Sánchez defiende la gestión exemplar del hantavirus ante el mundo</div>
-                <div class="news-body">El presidente del Gobierno español, Pedro Sánchez, ha calificado de « ejemplar » la respuesta de España ante el brote de hantavirus en un buque de croisière, defendiendo la eficacia de la gestión口水 que ha evitado una expansión mayor del virus.</div>
-                <div class="news-meta"><em>RTVE</em> (10/05/2026) <a href="https://www.rtve.es/noticias/20260510/sanchez-defiende-espana-responde-con-ejemplaridad-eficacia-gestion-del-hantavirus-ante-resto-del-mundo/17061865.shtml">🔗</a></div>
-            </div>
-            <div class="news">
-                <div class="news-title">El PP sopesa acciones jurídicas contra los plantones de Sánchez al Senado</div>
-                <div class="news-body">El Partido Popular está estudiando emprender acciones jurídicas contra el presidente del Gobierno y sus ministros por los repetidos plantones al Senado, un gesto que considera un « desprecio » a la institución parlamentaria.</div>
-                <div class="news-meta"><em>ABC</em> (10/05/2026) <a href="https://www.abc.es/espana/pp-sopesa-acciones-juridicas-plantones-sanchez-ministros-20260510030957-nt.html">🔗</a></div>
-            </div>
-        </div>
-
-        <div class="proverb">
-            <div class="proverb-es">💭 <em>Quien mucho corre, cansado llega</em></div>
-            <div class="proverb-fr">||Qui beaucoup court, arrive fatigué — proverbe espagnol||</div>
-        </div>
-
-        <div class="conseil">
-            <div class="conseil-text">💪 <strong>Conseil :</strong> Météo idéale aujourd'hui et événement léger demain — c'est le moment parfait pour programmer une session JDR avec Théodore et Cassandre sur Foundry VTT. Et pour l'espagnol, profites-en pour lire un article en español sur les succès du cinéma espagnol, ça motive !</div>
-        </div>
-
-        <div class="footer">
-            Rapport généré par Nestor • 11/05/2026
-        </div>
+  <div class="meteo">
+    <h3>🌤️ Météo du jour — Pau</h3>
+    <div class="meteo-grid">
+      <div class="meteo-item"><div class="heure">08h</div><div class="temp">12°C</div><div>☁️</div></div>
+      <div class="meteo-item"><div class="heure">12h</div><div class="temp">16°C</div><div>☁️</div></div>
+      <div class="meteo-item"><div class="heure">16h</div><div class="temp">20°C</div><div>☁️</div></div>
+      <div class="meteo-item"><div class="heure">22h</div><div class="temp">15°C</div><div>☁️</div></div>
     </div>
+    <div class="meteo-sunset">
+      <span>🌅 Lever : 06h40</span>
+      <span>🌇 Coucher : 21h15</span>
+    </div>
+    <p style="color: #8b949e; margin-top: 10px; font-size: 0.9em;">Demain : 11°C → 15°C / Matinée nuageuse / Après-midi pluie éparse</p>
+  </div>
+
+  <div class="section">
+    <h3>📅 Aujourd'hui — Aucun événement prévu</h3>
+  </div>
+
+  <div class="section">
+    <h3>🌐 Actualité internationale</h3>
+    <div class="actus">
+      <h4>🇨🇦 Le Canada soutient la commission des réparations de guerre en Ukraine</h4>
+      <p>Le Canada est devenu le premier pays hors d'Europe à signer une convention visant à mettre en place une commission qui statuera sur les demandes de réparation contre la Russie pour sa guerre en Ukraine. Cette décision marque un tournant diplomatique important dans la quête de justice pour les victimes du conflit.</p>
+      <p class="source"><em>Source : The Globe and Mail</em> (12/05/2026)</p>
+    </div>
+    <div class="actus">
+      <h4>🌊 Détroit d'Ormuz : l'ONU appelle à la désescalade urgente</h4>
+      <p>Le secrétaire général de l'ONU a appelé à une désescalade urgente dans le détroit d'Ormuz, cette artère stratégique séparant les Émirats arabes unis et l'Iran par laquelle transite un cinquième du commerce mondial de pétrole. La tension croissante dans la région menace les routes commerciales mondiales.</p>
+      <p class="source"><em>Source : ONU News</em> (12/05/2026)</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>🌍 Actualité économique</h3>
+    <div class="actus">
+      <h4>🇯🇵 La Banque du Japon durcit sa position face aux inquiétudes inflationnistes</h4>
+      <p>La Banque du Japon (BoJ) fait face à une pression croissante pour resserrer sa politique monétaire face à la flambée des prix du pétrole causée par le conflit au Moyen-Orient. Les analystes observent un tournant hawkish significatif de la part de l'institution TOKYO qui pourrait affecter les marchés asiatiques.</p>
+      <p class="source"><em>Source : The Economic Times</em> (12/05/2026)</p>
+    </div>
+    <div class="actus">
+      <h4>📊 Hausse de l'inflation américaine en avril : les marchés surveillent</h4>
+      <p>L'inflation américaine a continué de progresser en avril, principalement en raison du conflit avec l'Iran et de son impact sur les prix énergétiques. Les marchés actions reculent légèrement en début de semaine alors que les investisseurs digèrent ces nouvelles macroéconomiques.</p>
+      <p class="source"><em>Source : MarketScreener / Reuters</em> (12/05/2026)</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>🇫🇷 Actualité française (Société & Culture)</h3>
+    <div class="actus">
+      <h4>🎬 Cannes 2026 : J-1 avant l'ouverture du festival</h4>
+      <p>Le 79e Festival de Cannes s'ouvre demain soir. L'affiche 2026 rend hommage à Susan Sarandon et Geena Davis sur le tournage de Thelma et Louise, de Ridley Scott. La compétition officielle compte cette année des réalisatrices venues de 14 pays différents.</p>
+      <p class="source"><em>Source : Slate.fr</em> (12/05/2026)</p>
+    </div>
+    <div class="actus">
+      <h4>⚖️ Loi IA & droit d'auteur : le vote crucial à l'Assemblée nationale</h4>
+      <p>Le sort d'une proposition de loi cruciale pour le droit d'auteur à l'ère de l'intelligence artificielle se joue aujourd'hui à l'Assemblée nationale. Les présidents de groupe doivent statuer sur son inscription à l'ordre du jour — un texte très attendu par le secteur culturel.</p>
+      <p class="source"><em>Source : Le Figaro</em> (11/05/2026)</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>🏛️ Actualité politique</h3>
+    <div class="actus">
+      <h4>📜 Le Sénat adopte le projet de loi Ripost en commission</h4>
+      <p>Le Sénat, en commission des Lois, a adopté le projet de loi Ripost du gouvernement. Ce texte vise à renforcer les outils de réponse face aux menaces sécuritaires et doit encore passer en séance plénière.</p>
+      <p class="source"><em>Source : France 24</em> (06/05/2026)</p>
+    </div>
+    <div class="actus">
+      <h4>🔒 Rétention d'étrangers : l'Assemblée adopte un texte contesté</h4>
+      <p>L'Assemblée nationale a adopté un texte prolongeant la rétention administrative des étrangers jugés dangereux, après des débats mouvementés au sein de l'hémicycle. La mesure a été votée dans un contexte de tensions sur la politique migratoire.</p>
+      <p class="source"><em>Source : France 24</em> (05/05/2026)</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>🇪🇸 Actualidad</h3>
+    <div class="actus">
+      <h4>🇪🇸 España no asistirá a la cumbre sobre Ormuz en Londres</h4>
+      <p>España ha declinado participar en la cumbre internacional celebrada en Londres para abordar la apertura del estrecho de Ormuz, alegando una reunión del Consejo en Bruselas, pese a que las dos citas eran compatibles según fuentes diplomáticas. Londres y París han movilizado buques para garantizar las rutas comerciales.</p>
+      <p class="source"><em>Source : El Español</em> (12/05/2026)</p>
+      <p style="color: #8b949e; margin-top: 8px;">||L'Espagne n'assistera pas au sommet sur Ormuz à Londres : le gouvernement invoque un Conseil à Bruxelles, alors que les deux événements étaient compatibles selon des sources diplomatiques. Londres et Paris ont déployé des navires pour sécuriser les routes commerciales.||</p>
+    </div>
+    <div class="actus">
+      <h4>💰 La economía española crecerá más del 2% en 2026</h4>
+      <p>Los analistas consideran que la economía española "aguanta" y crecerá "más de un 2%" en 2026 si el conflicto en el estrecho de Ormuz se resuelve pronto. No obstante, alertan de que una escalada podría impactar negativamente en el consumo y la inversión.</p>
+      <p class="source"><em>Source : Infobae</em> (12/05/2026)</p>
+      <p style="color: #8b949e; margin-top: 8px;">||L'économie espagnole "résiste" et devrait croître de plus de 2% en 2026 si le conflit au détroit d'Ormuz se résout rapidement. Porém, les analystes alertent qu'une escalade pourrait impacter négativement la consommation et l'investissement.||</p>
+    </div>
+  </div>
+
+  <div class="proverbe">
+    <p class="original">💭 "Quien tiene salud, tiene esperanza"</p>
+    <p class="traduction">||Qui a la santé a l'espoir||</p>
+  </div>
+
+  <div class="conseil">
+    <h4>💪 Conseil du jour</h4>
+    <p>Avec l'approche du Festival de Cannes et les projets JDR sur Foundry VTT, c'est le moment de finaliser les tokens et scènes de bataille pour ta prochaine session. Et n'oublie pas : 15 minutes d'espagnol par jour valent mieux qu'une heure sporadique !</p>
+  </div>
+
+  <div class="footer">
+    <p>Rapport généré par Nestor 🤖 | 12 mai 2026</p>
+  </div>
+</div>
 </body>
 </html>
