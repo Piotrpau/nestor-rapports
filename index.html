@@ -17,17 +17,6 @@ h1 { color: #ff6b35; text-align: center; margin-bottom: 5px; font-size: 1.8em; }
 .weather-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; }
 .weather-item { background: #0f3460; padding: 8px; border-radius: 8px; }
 .weather-item span { display: block; font-size: 0.85em; color: #888; }
-.news-item { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #333; }
-.news-item:last-child { border-bottom: none; }
-.news-item h3 { color: #e94560; font-size: 1em; margin-bottom: 5px; }
-.news-item p { color: #b0b0b0; font-size: 0.9em; line-height: 1.5; }
-.news-item .source { color: #666; font-size: 0.8em; margin-top: 5px; }
-.news-item.es { border-left: 3px solid #ff6b35; padding-left: 10px; }
-.news-item.es h3 { color: #ff6b35; }
-.news-item.es .trans { color: #888; font-size: 0.85em; font-style: italic; margin-top: 5px; }
-.proverb { text-align: center; background: linear-gradient(135deg, #0f3460, #16213e); padding: 20px; border-radius: 10px; margin-top: 15px; }
-.proverb-es { color: #ff6b35; font-size: 1.2em; font-style: italic; }
-.proverb-fr { color: #888; margin-top: 10px; font-size: 0.95em; }
 .events { font-size: 0.95em; }
 .events li { margin-bottom: 8px; color: #b0b0b0; }
 .events .time { color: #4fc3f7; margin-right: 8px; }
@@ -39,7 +28,9 @@ h1 { color: #ff6b35; text-align: center; margin-bottom: 5px; font-size: 1.8em; }
 <h1>🌅 Rapport du matin</h1>
 <div class="date">mardi 19 mai 2026</div>
 <div class="saint">
-<div class="saint-name">🎉 Saint Célestin V</div><div class="saint-desc">Contemplatif, amoureux du silence, demeure de Dieu, Saint Pierre Célestin V, Pape, est célébré par l’Eglise le 19 mai. Il est connu pour l’indiction du Jubilé du «Pardon» de l’Aquila en 1294 et pour son bref pontificat auquel il met fin par sa démission quelques mois après son élection.  </div></div>
+<div class="saint-name">🎉 Saint Célestin V</div>
+<div class="saint-desc">Contemplatif, amoureux du silence, demeure de Dieu, Saint Pierre Célestin V, Pape, est célébré par l’Eglise le 19 mai. Il est connu pour l’indiction du Jubilé du «Pardon» de l’Aquila en 1294 et pour son bref pontificat auquel il met fin par sa démission quelques mois après son élection.  </div>
+</div>
 
 <div class="section">
 <h2>🌤️ Météo — Pau</h2>
@@ -61,27 +52,27 @@ h1 { color: #ff6b35; text-align: center; margin-bottom: 5px; font-size: 1.8em; }
 </ul>
 </div><div class="section">
 <h2>🌐 Actualité internationale</h2>
-<div class='news-item'><h3>Moyen-Orient: l&#39;Iran r&#233;pond &#224; la derni&#232;re proposition am&#233;ricaine, apr&#232;s de nouvelles menaces de Trump - RFI</h3><p>Gaza : le Haut-Commissariat des Nations unies aux droits de l’homme exige qu’Isra&#235;l emp&#234;che un g&#233;nocide [...] Les Nations unies ont exig&#233;, lundi 18 mai, qu’Isra&#235;l prenne toutes les mesures possibles pour emp&#234;cher des actes de &#171; g&#233;nocide &#187; &#224; Gaza, d&#233;non&#231;ant des signes de &#171; nettoyage ethnique &#187;...</p><span class='source'>RFI.FR (18/05/2026)</span></div>
+<div id="news-monde" style="color:#888;text-align:center;">⏳ Chargement...</div>
 </div>
 
 <div class="section">
 <h2>🌍 Économie & Finance</h2>
-<div class='news-item'><h3>Taux d’int&#233;r&#234;t en forte hausse&#160;: le Royaume-Uni, la France et l’Italie sous la pression des march&#233;s financiers</h3><p>Moyen-Orient: les march&#233;s peinent &#224; trouver un consensus [...] Washington (&#201;tats-Unis) (AFP) – Les march&#233;s mondiaux sont rest&#233;s divis&#233;s lundi, accueillant diff&#233;remment une succession d&#39;actualit&#233;s sur le conflit au Moyen-Orient, les craintes inflationnistes continuant de maintenir les taux...</p><span class='source'>LEMONDE.FR (18/05/2026)</span></div>
+<div id="news-economie" style="color:#888;text-align:center;">⏳ Chargement...</div>
 </div>
 
 <div class="section">
 <h2>🇫🇷 Société & Culture</h2>
-<div class='news-item'><h3>Le projet de loi Ripost, pour lutter contre les raves et les rod&#233;os urbains, arrive au S&#233;nat - France 24</h3><p>Le S&#233;nat donne son feu vert &#224; la restitution des d&#233;pouilles d&#39;Am&#233;rindiens de Guyane conserv&#233;es dans les mus&#233;es [...] Le S&#233;nat donne son feu vert &#224; la restitution des d&#233;pouilles d&#39;Am&#233;rindiens de Guyane conserv&#233;es dans les mus&#233;es [...] Le S&#233;nat adopte &#224; l&#39;unanimit&#233; lundi 18 mai la proposition de loi...</p><span class='source'>FRANCE24.COM (18/05/2026)</span></div>
+<div id="news-france" style="color:#888;text-align:center;">⏳ Chargement...</div>
 </div>
 
 <div class="section">
 <h2>🏛️ Politique française</h2>
-<div class='news-item'><h3>&quot;&#199;a ne va jamais me faire arr&#234;ter de fumer&quot;: les consommateurs n&#39;ont pas peur du projet de loi RIPOST</h3><p>Le projet de loi Ripost, pour lutter contre les raves et les rod&#233;os urbains, arrive au S&#233;nat [...] Le S&#233;nat examine, &#224; partir de lundi, le projet de loi Ripost, pour lutter contre les troubles quotidiens &#224; l&#39;ordre public en France. Un &quot;choc d&#39;autorit&#233;&quot; d&#233;fendu par le gouvernement afin d&#39;apporter...</p><span class='source'>RMC.BFMTV.COM (18/05/2026)</span></div>
+<div id="news-politique" style="color:#888;text-align:center;">⏳ Chargement...</div>
 </div>
 
 <div class="section">
 <h2>🇪🇸 Actualidad (España)</h2>
-<div class='news-item es'><h3>Los m&#233;dicos convocan la cuarta huelga del a&#241;o: contin&#250;a el conflicto con Sanidad</h3><p>hD1�mS�N��H1}wsE8�d��bw�J�u��}����^�C�&#39;�z�����4����h�.�`G ��G�76�����룃�g&#39;_�{�����ֻO�������k0y�f�t�i�T��jM�Zc}�Fh��Y㦆��v uڨ�n���mﶴ�����v;Z��Ŗjt�!7�oi-�5��d�f�|F. �aΰ(�/B�,��Q-�u/����wY�[�N��޽O������Xsm�n���k�`^�t�`.�骪�z���ݻ{6g��...</p><span class='source'>TELECINCO.ES (18/05/2026)</span><div class='trans'>|| hD1�mS�N��H1}wsE8�d��bw�J�u��}����^�C�&#39;�z�����4����h�.�`G ��G�76�����룃�g&#39;_�{�����ֻO�������k0y�f�t�i�T��jM�Zc}�Fh��Y㦆��v uڨ�n���mﶴ�����v;Z��Ŗjt�!7�oi-�5��d�f�|F. �aΰ(�/B�,��Q-�u/����wY�[�N��޽O������Xsm�n���k�`^�t�`.�骪�z���ݻ{6g��... ||</div></div><div class='news-item es'><h3>Noticias del d&#237;a 18 de mayo de 2026 - EL PA&#205;S</h3><p>S&#225;nchez arremete contra la &#39;prioridad nacional&#39; de Vox y quienes privatizan la sanidad S&#225;nchez arremete contra la &#39;prioridad nacional&#39; de Vox y quienes privatizan la sanidad [...] Ginebra, 18 may (EFE).- El jefe del Gobierno, Pedro S&#225;nchez, ha atacado este lunes el concepto de &#39;p... [...]...</p><span class='source'>ELPAIS.COM (19/05/2026)</span><div class='trans'>|| S&#225;nchez arremete contra la &#39;prioridad nacional&#39; de Vox y quienes privatizan la sanidad S&#225;nchez arremete contra la &#39;prioridad nacional&#39; de Vox y quienes privatizan la sanidad [...] Ginebra, 18 may (EFE).- El jefe del Gobierno, Pedro S&#225;nchez, ha atacado este lunes el concepto de &#39;p... [...]... ||</div></div>
+<div id="news-espana" style="color:#888;text-align:center;">⏳ Chargement...</div>
 </div>
 
 <div class="proverb">
@@ -90,7 +81,7 @@ h1 { color: #ff6b35; text-align: center; margin-bottom: 5px; font-size: 1.8em; }
 </div>
 
 <div class="footer">
-Rapport généré par Nestor • OpenClaw • 19/05/2026 16:05
+Rapport généré par Nestor • OpenClaw • 19/05/2026 16:39
 </div>
 </body>
 </html>
